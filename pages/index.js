@@ -1,78 +1,55 @@
-import AnimatedSection from '../components/AnimatedSection';
-import Header from '../components/Header';  
 import { useEffect } from "react";
+import Header from '../components/Header';  
+import SkillsHeader from '../components/SkillsHeader';  
+import SkillsSection from '../components/SkillsSection';
+import ExperienceHeader from '../components/ExperienceHeader';  
 
 export default function Home() {
-  useEffect(() => {
-
-    (async () => {
-
-      const gsapModule = await import('gsap');
-      const ScrollTrigger = (await import('gsap/ScrollTrigger')).ScrollTrigger;
-
-      gsapModule.gsap.registerPlugin(ScrollTrigger);
-
-      // Pin the second section
-      ScrollTrigger.create({
-        trigger: "#pinned-section",
-        start: "top top",
-        pin: true,
-        pinSpacing: false
-      });
-
-    })();
-  }, []);  
-  
   
   return (
-    <div className="relative">
-      
+    <div className="relative">      
       <Header />
+      <main>
+        <div className="relative h-screen mt-[100vh]">
 
-      <div className="relative h-screen mt-[100vh]">
+          <SkillsHeader />
+          <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-700 to-gray-500">
+            <div className="h-screen p-20 flex justify-center items-center">
+              <div className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
 
-        <section className="absolute inset-0 z-20 bg-gray-100">
-          <AnimatedSection>
-            <div className="h-full bg-yellow-500">
-              <h2 className="text-center w-full text-3xl font-semibold mb-2">Hello! I'm Steve</h2>
-              <p className="text-center">I'm a professional software developer with nearly two decades of experience. Most of my expertise is in backend development with a focus in C# and MSSQL. However, I am a full stack developer with experience in HTML, CSS, and JavaScript as well. My projects have been focused on APIs, Web Development, and Web Scraping. I have been involved in hosting my work in the cloud using both Azure and AWS.</p>
+                <h2 className="text-center w-full text-3xl font-semibold mb-8">Hello! I'm Steve</h2>
+                <p className="text-center leading-loose">
+                  I'm a professional software developer with nearly two decades of experience. Most of my expertise is in backend development with a focus in C# and MSSQL. However, I am a full stack developer with experience in HTML, CSS, and JavaScript as well. My projects have been focused on APIs, Web Development, and Web Scraping. I have been involved in hosting my work in the cloud using both Azure and AWS.
+                </p>
+              
+              </div>
             </div>
-          </AnimatedSection>
-        </section>
+          </section>
+        </div>
+        <SkillsSection />
 
-        <section className="absolute inset-0 z-10 h-screen w-full bg-blue-500" id="pinned-section">
-          <div className="w-full h-full flex justify-center items-center text-white text-3xl">
-            Testing TWO
-          </div>
-        </section>
+        <div className="relative h-screen">
 
-      </div>
+          <ExperienceHeader />
+          <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-700 to-gray-500">
+            <div className="h-screen p-20 flex justify-center items-center">
+              <div className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
 
-      <div className="relative z-30 h-screen">
-      </div>
+                <h2 className="text-center w-full text-3xl font-semibold mb-8">Job Experience</h2>
+                <p className="text-center leading-loose">
+                  TODO
+                </p>
+              
+              </div>
+            </div>
+          </section>
 
-      {/* <main>
+        </div>
 
-        <section className="bg-gray-100 mt-[100vh] h-screen relative z-10">
-          <AnimatedSection>
-            <h2 className="text-3xl font-semibold mb-2">Hello! I'm Steve</h2>
-            <p>I'm a professional software developer with nearly two decades of experience. Most of my expertise is in backend development with a focus in C# and MSSQL. However, I am a full stack developer with experience in HTML, CSS, and JavaScript as well. My projects have been focused on APIs, Web Development, and Web Scraping. I have been involved in hosting my work in the cloud using both Azure and AWS.</p>
-          </AnimatedSection>
+        <div className="h-screen">
 
-          <AnimatedSection>
-            <h2 className="text-3xl font-semibold mb-2">Scroll-Triggered Animations</h2>
-            <p>GSAP + ScrollTrigger give you smooth, performant animations triggered exactly when you want.</p>
-          </AnimatedSection>
-
-          <div className="pb-40">
-            <AnimatedSection>
-              <h2 className="text-3xl font-semibold mb-2">Modern Developer Experience</h2>
-              <p>With Next.js and Tailwind, development is fast, fun, and scalable for the future.</p>
-            </AnimatedSection>
-          </div>
-        </section>
-
-      </main> */}
+        </div>
+      </main>
     </div>
   );
 }

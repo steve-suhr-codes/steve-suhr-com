@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function AnimatedSection({ children }) {
+export default function AnimatedSection({ title, description }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -40,7 +40,8 @@ export default function AnimatedSection({ children }) {
       ref={ref}
       className="my-20 p-8 bg-white rounded-xl shadow-lg max-w-2xl mx-auto"
     >
-      {children}
+      <h2 className="text-3xl font-semibold mb-2">{title}</h2>
+      <p>{description}</p>
     </div>
   );
 }
