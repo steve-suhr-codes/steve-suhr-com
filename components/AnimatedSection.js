@@ -16,15 +16,16 @@ export default function AnimatedSection({ children }) {
       ctx = gsapModule.gsap.context(() => {
         gsapModule.gsap.fromTo(
           ref.current,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 100 },
           {
             opacity: 1,
             y: 0,
             duration: 1,
             scrollTrigger: {
               trigger: ref.current,
-              start: 'top 80%',
+              start: 'top 85%',
               toggleActions: 'play none none reverse',
+              // markers: true
             },
           }
         );
