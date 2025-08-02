@@ -24,7 +24,7 @@ export default function ExperienceHeader() {
   }, []);  
 
   return (
-    <section className="absolute inset-0 z-10 h-screen w-full bg-blue-500" id="pinned-experience-section">
+    <section className="absolute inset-0 z-5 h-screen w-full bg-blue-500" id="pinned-experience-section">
       <div className="w-full h-full flex justify-center items-center text-white text-3xl">
 
         <h1 className="text-5xl font-bold mt-4 mx-10">JOB EXPERIENCE</h1>

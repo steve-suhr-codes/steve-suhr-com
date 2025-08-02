@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import SkillsHeader from '../components/SkillsHeader';  
 import SkillsSection from '../components/SkillsSection';
 import ExperienceHeader from '../components/ExperienceHeader';  
+import ExperienceSection from '../components/ExperienceSection';  
 
 export default function Home() {
   
@@ -12,7 +13,6 @@ export default function Home() {
       <main>
         <div className="relative h-screen mt-[100vh]">
 
-          <SkillsHeader />
           <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-700 to-gray-500">
             <div className="h-screen p-20 flex justify-center items-center">
               <div className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
@@ -25,13 +25,20 @@ export default function Home() {
               </div>
             </div>
           </section>
+          <SkillsHeader />
         </div>
         <SkillsSection />
 
-        <div className="relative h-screen">
+        <div className="relative h-screen -mt-[100vh]">
 
           <ExperienceHeader />
-          <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-700 to-gray-500">
+
+        </div>
+
+        <div className="relative h-screen mt-[100vh]">
+
+          <ExperienceSection />
+          {/* <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-700 to-gray-500">
             <div className="h-screen p-20 flex justify-center items-center">
               <div className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
 
@@ -42,11 +49,11 @@ export default function Home() {
               
               </div>
             </div>
-          </section>
+          </section> */}
 
         </div>
 
-        <div className="h-screen">
+        <div className="relative h-screen mt-[100vh]">
 
         </div>
       </main>
