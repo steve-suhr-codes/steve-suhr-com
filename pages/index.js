@@ -25,7 +25,9 @@ export default function Home() {
             </div>
           </section>
           <PinnedHeader pinnedId="skills-header">
-            <h1 className="text-5xl font-bold mt-4 mx-10">SKILLS</h1>
+            <div className="flex h-full w-full justify-center items-center bg-gradient-to-r from-blue-900/75 to-blue-500/75">
+              <h1 className="text-5xl font-bold my-4 mx-10 opacity-100">SKILLS</h1>
+            </div>
           </PinnedHeader>
         </div>
         <SkillsSection />
@@ -48,7 +50,13 @@ export default function Home() {
 
         <div className="relative h-screen mt-[100vh]">
           <section className="bg-gray-100 h-screen relative z-20 py-1">
-            TESTING TESTING TESTING
+            <h1>Virginia Polytechnic Institute and State University</h1>
+            <h1>Blacksburg, VA</h1>
+            <h1>BS, Computer Engineering</h1>
+            <h4>AUGUST 2002 - JUNE 2006</h4>
+            <p>
+              Minored in Computer Science and Mathematics. Participated in undergraduate research with e-textiles/wearable embedded systems, AES encryption timing attacks, and feedback driven e-commerce research.
+            </p>
           </section>
         </div>
 

@@ -24,11 +24,10 @@ export default function PinnedHeader({ children, pinnedId }) {
   }, []);  
 
   return (
-    <section className="absolute inset-0 z-10 h-screen w-full bg-blue-500" id={pinnedId}>
+    <section className="absolute inset-0 z-10 h-screen w-full bg-[url('/images/glass-background.avif')] bg-cover bg-center" id={pinnedId}>
       <div className="w-full h-full flex justify-center items-center text-white text-3xl">
 
         {children}
-        {/* <h1 className="text-5xl font-bold mt-4 mx-10">SKILLS</h1> */}
 
       </div>
     </section>
