@@ -2,7 +2,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Icons() {
   return (
-    <div className="flex pt-4">
+    <div className="flex">
       <div className="px-2">
         <a 
             href="https://www.linkedin.com/in/stevesuhr/" 

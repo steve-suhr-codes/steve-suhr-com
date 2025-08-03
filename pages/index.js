@@ -1,19 +1,18 @@
 import { useEffect } from "react";
-import Header from '../components/Header';  
-import SkillsHeader from '../components/SkillsHeader';  
+import FixedHeader from '../components/FixedHeader';  
 import SkillsSection from '../components/SkillsSection';
-import ExperienceHeader from '../components/ExperienceHeader';  
 import ExperienceSection from '../components/ExperienceSection';  
+import PinnedHeader from "../components/PinnedHeader";
 
 export default function Home() {
   
   return (
-    <div className="relative">      
-      <Header />
+    <div className="relative">
+      <FixedHeader />
       <main>
         <div className="relative h-screen mt-[100vh]">
 
-          <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-700 to-gray-500">
+          <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-200 to-gray-100">
             <div className="h-screen p-20 flex justify-center items-center">
               <div className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
 
@@ -25,37 +24,37 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <SkillsHeader />
+          <PinnedHeader pinnedId="skills-header">
+            <h1 className="text-5xl font-bold mt-4 mx-10">SKILLS</h1>
+          </PinnedHeader>
         </div>
         <SkillsSection />
 
         <div className="relative h-screen -mt-[100vh]">
-
-          <ExperienceHeader />
-
+          <PinnedHeader pinnedId="experience-header">
+            <h1 className="text-5xl font-bold mt-4 mx-10">JOB EXPERIENCE</h1>
+          </PinnedHeader>
         </div>
 
         <div className="relative h-screen mt-[100vh]">
-
           <ExperienceSection />
-          {/* <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-700 to-gray-500">
-            <div className="h-screen p-20 flex justify-center items-center">
-              <div className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
-
-                <h2 className="text-center w-full text-3xl font-semibold mb-8">Job Experience</h2>
-                <p className="text-center leading-loose">
-                  TODO
-                </p>
-              
-              </div>
-            </div>
-          </section> */}
-
         </div>
 
         <div className="relative h-screen mt-[100vh]">
-
+          <PinnedHeader pinnedId="education-header">
+            <h1 className="text-5xl font-bold mt-4 mx-10">EDUCATION</h1>
+          </PinnedHeader>
         </div>
+
+        <div className="relative h-screen mt-[100vh]">
+          <section className="bg-gray-100 h-screen relative z-20 py-1">
+            TESTING TESTING TESTING
+          </section>
+        </div>
+
+        <div className="relative h-screen">
+        </div>
+
       </main>
     </div>
   );

@@ -38,12 +38,19 @@ export default function SingleExperience({ children, company, location, title, d
   return (
     <div
       ref={ref}
-      className="my-20 p-8 bg-white rounded-xl shadow-lg max-w-2xl mx-auto"
+      className="my-16 p-8 bg-white rounded-xl shadow-lg max-w-3xl mx-auto space-y-4"
     >
-      <h2 className="text-3xl font-semibold mb-2">{company} - {title}</h2>
-      <h2 className="text-3xl font-semibold mb-2">{location}</h2>
-      <h2 className="text-3xl font-semibold mb-2">{dates}</h2>
-      <div>
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+        <h2 className="text-2xl font-bold text-gray-900">{company}</h2>
+        <span className="text-gray-600">{location}</span>
+      </div>
+
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+        <h3 className="text-xl font-medium text-gray-800">{title}</h3>
+        <span className="text-gray-500">{dates}</span>
+      </div>
+
+      <div className="prose prose-gray max-w-none">
         {children}
       </div>
     </div>

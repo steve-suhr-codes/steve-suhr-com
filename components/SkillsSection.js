@@ -2,7 +2,7 @@ import SingleSkill from '../components/SingleSkill';
 
 export default function() {
   return (
-    <section className="bg-gray-100 mt-[100vh] relative z-10 pt-1">
+    <section className="bg-gray-100 mt-[100vh] relative z-20 py-1">
       <SingleSkill
         title="C#"
         description=".NET 8, .NET Core, .NET Framework, Web API, ASP.NET, MVC, SignalR, WCF, Web Forms, Visual Studio, IIS">
@@ -42,8 +42,6 @@ export default function() {
         title="TDD"
         description="Dependency Injection, Unit Testing, Moq, XUnit, Fluent Assertions, Cypress">
       </SingleSkill>
-
-      <div className="p-1"></div>
     </section>
   );
 }

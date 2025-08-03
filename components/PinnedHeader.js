@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function ExperienceHeader() {
+export default function PinnedHeader({ children, pinnedId }) {
 
   useEffect(() => {
 
@@ -13,7 +13,7 @@ export default function ExperienceHeader() {
 
       // Pin the second section
       ScrollTrigger.create({
-        trigger: "#pinned-experience-section",
+        trigger: `#${pinnedId}`,
         pin: true,
         start: "top top",
         end: "+=200%", // stays pinned for twice the viewport height
@@ -24,10 +24,11 @@ export default function ExperienceHeader() {
   }, []);  
 
   return (
-    <section className="absolute inset-0 z-5 h-screen w-full bg-blue-500" id="pinned-experience-section">
+    <section className="absolute inset-0 z-10 h-screen w-full bg-blue-500" id={pinnedId}>
       <div className="w-full h-full flex justify-center items-center text-white text-3xl">
 
-        <h1 className="text-5xl font-bold mt-4 mx-10">JOB EXPERIENCE</h1>
+        {children}
+        {/* <h1 className="text-5xl font-bold mt-4 mx-10">SKILLS</h1> */}
 
       </div>
     </section>
