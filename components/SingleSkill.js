@@ -9,7 +9,7 @@ export default function AnimatedSection({ title, description }) {
     (async () => {
       // Dynamically import only on the client
       const { gsap } = await import('gsap');
-      const ScrollTrigger = (await import('gsap/ScrollTrigger')).ScrollTrigger;
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
       gsap.registerPlugin(ScrollTrigger);
 

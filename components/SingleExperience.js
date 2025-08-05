@@ -9,7 +9,7 @@ export default function SingleExperience({ children, company, location, title, d
     (async () => {
       // Dynamically import only on the client
       const { gsap } = await import('gsap');
-      const ScrollTrigger = (await import('gsap/ScrollTrigger')).ScrollTrigger;
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
       gsap.registerPlugin(ScrollTrigger);
 

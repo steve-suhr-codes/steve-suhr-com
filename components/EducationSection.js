@@ -1,10 +1,48 @@
+import { useEffect, useRef } from "react";
 
 
 export default function EducationSection() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    let ctx;
+
+    (async () => {
+      // Dynamically import only on the client
+      const { gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          ref.current,
+          { 
+            opacity: 0, 
+            y: 100 
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse',
+              // markers: true
+            },
+          }
+        );
+      }, ref);
+    })();
+
+    return () => ctx && ctx.revert(); // cleanup on unmount
+  }, []);
+  
 
   return (
     <section className="bg-gradient-to-r from-gray-200 to-gray-100 min-h-screen relative z-20 py-12 px-6 flex items-center justify-center">
-        <div className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
+        <div ref={ref} className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
           <div className="max-w-3xl w-full">
             <h2 className="text-2xl font-bold text-gray-800">
               Virginia Polytechnic Institute and State University
