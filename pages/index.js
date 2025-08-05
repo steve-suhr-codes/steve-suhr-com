@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import FixedHeader from '../components/FixedHeader';  
+import PinnedHeader from "../components/PinnedHeader";
 import SkillsSection from '../components/SkillsSection';
 import ExperienceSection from '../components/ExperienceSection';  
-import PinnedHeader from "../components/PinnedHeader";
+import EducationSection from '../components/EducationSection';
 
 export default function Home() {
   
@@ -49,15 +49,7 @@ export default function Home() {
         </div>
 
         <div className="relative h-screen mt-[100vh]">
-          <section className="bg-gray-100 h-screen relative z-20 py-1">
-            <h1>Virginia Polytechnic Institute and State University</h1>
-            <h1>Blacksburg, VA</h1>
-            <h1>BS, Computer Engineering</h1>
-            <h4>AUGUST 2002 - JUNE 2006</h4>
-            <p>
-              Minored in Computer Science and Mathematics. Participated in undergraduate research with e-textiles/wearable embedded systems, AES encryption timing attacks, and feedback driven e-commerce research.
-            </p>
-          </section>
+          <EducationSection />
         </div>
 
         <div className="relative h-screen">

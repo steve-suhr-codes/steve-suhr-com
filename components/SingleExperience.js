@@ -8,13 +8,13 @@ export default function SingleExperience({ children, company, location, title, d
 
     (async () => {
       // Dynamically import only on the client
-      const gsapModule = await import('gsap');
+      const { gsap } = await import('gsap');
       const ScrollTrigger = (await import('gsap/ScrollTrigger')).ScrollTrigger;
 
-      gsapModule.gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
-      ctx = gsapModule.gsap.context(() => {
-        gsapModule.gsap.fromTo(
+      ctx = gsap.context(() => {
+        gsap.fromTo(
           ref.current,
           { opacity: 0, y: 100 },
           {

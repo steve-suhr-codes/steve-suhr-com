@@ -8,13 +8,13 @@ export default function AnimatedSection({ title, description }) {
 
     (async () => {
       // Dynamically import only on the client
-      const gsapModule = await import('gsap');
+      const { gsap } = await import('gsap');
       const ScrollTrigger = (await import('gsap/ScrollTrigger')).ScrollTrigger;
 
-      gsapModule.gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
-      ctx = gsapModule.gsap.context(() => {
-        gsapModule.gsap.fromTo(
+      ctx = gsap.context(() => {
+        gsap.fromTo(
           ref.current,
           { opacity: 0, y: 100 },
           {
@@ -36,10 +36,7 @@ export default function AnimatedSection({ title, description }) {
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className="my-20 p-8 bg-white rounded-xl shadow-lg max-w-2xl mx-auto"
-    >
+    <div ref={ref} className="my-20 p-8 bg-white rounded-xl shadow-lg max-w-2xl mx-auto">
       <h2 className="text-3xl font-semibold mb-2">{title}</h2>
       <p>{description}</p>
     </div>

@@ -3,10 +3,10 @@ import Icons from './Icons';
 
 export default function FixedHeader() {
 
-  const picRef = useRef();
-  const nameRef = useRef();
-  const titleRef = useRef();
-  const iconsRef = useRef();
+  const picRef = useRef(null);
+  const nameRef = useRef(null);
+  const titleRef = useRef(null);
+  const iconsRef = useRef(null);
 
   useEffect(() => {
     (async () => {
@@ -15,7 +15,7 @@ export default function FixedHeader() {
 
       gsap.from(picRef.current, {
         opacity: 0,
-        y: -window.innerHeight,
+        y: -window.innerHeight / 2,
         duration: 3,
         ease: "power4.inOut"
       });
@@ -36,7 +36,7 @@ export default function FixedHeader() {
 
       gsap.from(iconsRef.current, {
         opacity: 0,
-        y: window.innerHeight,
+        y: window.innerHeight / 2,
         duration: 3,
         ease: "power4.inOut"
       });

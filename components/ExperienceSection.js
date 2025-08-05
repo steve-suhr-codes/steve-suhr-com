@@ -1,8 +1,8 @@
 import SingleExperience from './SingleExperience';
 
-export default function() {
+export default function ExperienceSection() {
   return (
-    <section className="bg-gray-100 relative z-20 py-1">
+    <section className="bg-gradient-to-r from-gray-200 to-gray-100 relative z-20 py-1">
       <SingleExperience
         company="Barrett Jackson"
         location="Scottsdale, AZ"
