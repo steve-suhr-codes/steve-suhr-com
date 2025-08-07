@@ -6,18 +6,41 @@ export default function PinnedHeader({ text, pinnedId }) {
 
     (async () => {
 
-      const gsapModule = await import('gsap');
-      const ScrollTrigger = (await import('gsap/ScrollTrigger')).ScrollTrigger;
+      const { gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
-      gsapModule.gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
-      // Pin the second section
-      ScrollTrigger.create({
-        trigger: `#${pinnedId}`,
-        pin: true,
-        start: "top top",
-        end: "+=200%", // stays pinned for twice the viewport height
-        pinSpacing: false
+      // ScrollTrigger.create({
+      //   trigger: `#${pinnedId}`,
+      //   pin: true,
+      //   start: "top top",
+      //   end: "+=200%", // stays pinned for twice the viewport height
+      //   pinSpacing: false
+      // });
+
+      // gsap.to(`#${pinnedId}`, {
+      //   y: "-30%", // move upward slower than the scroll
+      //   ease: "none", // keep it linear
+      //   scrollTrigger: {
+      //     trigger: `#${pinnedId}`,
+      //     start: "top bottom", // start when section enters viewport
+      //     end: "bottom top", // end when it leaves
+      //     scrub: true // ties animation to scroll
+      //   }
+      // });
+
+      gsap.fromTo(`#${pinnedId}`, {
+        y: "0"
+      }, {
+        y: "90%", 
+        ease: "none", 
+        scrollTrigger: {
+          trigger: `#${pinnedId}`,
+          start: "top bottom", 
+          // end: "bottom top", 
+          scrub: true 
+        }
       });
 
     })();
