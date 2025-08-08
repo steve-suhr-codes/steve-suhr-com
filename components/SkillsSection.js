@@ -2,7 +2,7 @@ import SingleSkill from '../components/SingleSkill';
 
 export default function() {
   return (
-    <section className="bg-gradient-to-r from-gray-200 to-gray-100 mt-[100vh] relative z-20 py-1">
+    <section className="bg-gradient-to-r from-gray-200 to-gray-100 relative z-20 p-6 sm:p-10 md:p-20">
       <SingleSkill
         title="C#"
         description=".NET 8, .NET Core, .NET Framework, Web API, ASP.NET, MVC, SignalR, WCF, Web Forms, Visual Studio, IIS">
