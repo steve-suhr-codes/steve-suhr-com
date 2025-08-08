@@ -46,7 +46,8 @@ export default function FixedHeader() {
 
 
   return (
-    <header className="fixed inset-0 z-0 flex flex-col justify-center items-center bg-gradient-to-r from-blue-900 to-blue-500 text-white">
+    <header className="fixed inset-0 z-0 flex flex-col justify-center items-center bg-[url('/images/building-background.jpeg')] bg-cover bg-center text-white">
+      <div className="fixed inset-0 z-1 bg-gradient-to-r from-blue-900 to-blue-500 opacity-75"></div>
       <img ref={picRef} src="/images/Steve.jpeg" alt="Steve Suhr Profile Image" className="w-64 rounded-xl" />
       <h1 ref={nameRef} className="text-5xl font-bold mt-4 mx-10">Steve Suhr</h1>
       <p ref={titleRef} className="my-4 text-xl">Senior Software Engineer</p>

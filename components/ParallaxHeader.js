@@ -31,9 +31,15 @@ export default function ParallaxHeader({ text, containerId, bgId }) {
 
   return (
     <div id={containerId} className="relative h-[25vh] z-10">
-      <div id={bgId} className="absolute inset-0 h-[200%] bg-[url('/images/glass-background.avif')] bg-cover bg-center z-5"></div>
-      <div className="relative z-10 flex items-center justify-center h-full text-white">
-        <h1 className="text-5xl font-bold">{text}</h1>
+      <div
+        id={bgId}
+        className="absolute inset-0 h-[200%] bg-[url('/images/glass-background.avif')] bg-cover bg-center z-5"
+      ></div>
+      <div className="absolute inset-0 h-full z-6 bg-gradient-to-r from-blue-900 to-blue-500 opacity-75"></div>
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <h1 className="px-4 sm:px-10 py-3 text-2xl sm:text-4xl md:text-5xl tracking-widest text-white bg-white/15 whitespace-nowrap">
+          {text}
+        </h1>
       </div>
     </div>
   );

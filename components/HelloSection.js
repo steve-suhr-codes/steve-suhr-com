@@ -36,17 +36,24 @@ export default function HelloSection() {
   }, []);
 
   return (
-    <section className="absolute inset-0 z-20 bg-gradient-to-r from-gray-200 to-gray-100">
-      <div className="h-screen p-20 flex justify-center items-center">
-          <div ref={ref} className="flex flex-col p-8 justify-center items-center rounded-xl shadow-lg max-w-2xl mx-auto bg-white">
+    <div>
+      {/* Background layer */}
+      <section className="absolute inset-0 z-0 bg-gradient-to-r from-gray-200 to-gray-100" />
 
-            <h2 className="text-center w-full text-3xl font-semibold mb-8">Hello! I'm Steve</h2>
-            <p className="text-center leading-loose">
-                I'm a professional software developer with nearly two decades of experience. Most of my expertise is in backend development with a focus in C# and MSSQL. However, I am a full stack developer with experience in HTML, CSS, and JavaScript as well. My projects have been focused on APIs, Web Development, and Web Scraping. I have been involved in hosting my work in the cloud using both Azure and AWS.
-            </p>
-          
-          </div>
+      {/* Content layer */}
+      <div className="relative z-10 min-h-screen w-full px-6 sm:px-10 md:px-20 py-12 sm:py-16 md:py-20
+                      flex items-center justify-center">
+        <div ref={ref} className="flex flex-col p-6 sm:p-8 justify-center items-center rounded-xl shadow-lg 
+                        max-w-2xl mx-auto bg-white">
+          <h2 className="text-center w-full text-3xl font-semibold mb-6 sm:mb-8">
+            Hello! I'm Steve
+          </h2>
+          <p className="text-center leading-loose">
+            I'm a professional software developer with nearly two decades of experience. Most of my expertise is in backend development with a focus in C# and MSSQL. However, I am a full stack developer with experience in HTML, CSS, and JavaScript as well. My projects have been focused on APIs, Web Development, and Web Scraping. I have been involved in hosting my work in the cloud using both Azure and AWS.
+          </p>
+        </div>
       </div>
-    </section>
+      
+    </div>
   );
 }

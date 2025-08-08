@@ -78,29 +78,19 @@ export default function Home() {
   return (
     <div className="relative">
       <FixedHeader />
-      <main>
+      <main className="w-full">
 
-        <div className="relative h-screen mt-[100vh] z-20">
+        <div className="relative w-full mt-[100vh] z-20">
           <HelloSection />
         </div>
 
-        <div id="skills-header" className="relative h-[25vh] z-10">
-          <div id="skills-header-bg" className="absolute inset-0 h-[200%] bg-[url('/images/glass-background.avif')] bg-cover bg-center z-5"></div>
-          <div className="relative z-10 flex items-center justify-center h-full text-white">
-            <h1 className="text-5xl font-bold">SKILLS</h1>
-          </div>
-        </div>
+        <ParallaxHeader containerId="skills-header" bgId="skills-header-bg" text="SKILLS" />
 
         <div id="skills-section" className="relative z-20">
           <SkillsSection />
         </div>
 
-        <div id="jobs-header" className="relative h-[25vh] z-10">
-          <div id="jobs-header-bg" className="absolute inset-0 h-[200%] bg-[url('/images/glass-background.avif')] bg-cover bg-center z-5"></div>
-          <div className="relative z-10 flex items-center justify-center h-full text-white">
-            <h1 className="text-5xl font-bold">JOB EXPERIENCE</h1>
-          </div>
-        </div>
+        <ParallaxHeader containerId="jobs-header" bgId="jobs-header-bg" text="JOB EXPERIENCE" />
 
         <div id="experience-section" className="relative z-20">
           <ExperienceSection />
@@ -113,7 +103,7 @@ export default function Home() {
         </div>
 
         <div className="relative h-screen">
-        </div>
+        </div> 
 
       </main>
     </div>
