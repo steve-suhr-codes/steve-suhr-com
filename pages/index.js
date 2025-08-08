@@ -6,6 +6,7 @@ import ExperienceSection from '../components/ExperienceSection';
 import EducationSection from '../components/EducationSection';
 
 import { useEffect } from "react";
+import MainFooter from '../components/MainFooter';
 
 export default function Home() {
   
@@ -51,13 +52,12 @@ export default function Home() {
           <EducationSection />
         </div>
 
-        <div className="relative h-screen">
-        </div> 
-
       </main>
-      <footer>
 
+      <footer className="bg-gray-900 text-white py-6">
+        <MainFooter />
       </footer>
+
     </div>
   );
 }

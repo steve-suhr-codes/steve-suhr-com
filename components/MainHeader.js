@@ -4,9 +4,13 @@ import Icons from './Icons';
 export default function FixedHeader() {
 
   const picRef = useRef(null);
+  const picScrollRef = useRef(null);
   const nameRef = useRef(null);
+  const nameScrollRef = useRef(null);
   const titleRef = useRef(null);
+  const titleScrollRef = useRef(null);
   const iconsRef = useRef(null);
+  const iconsScrollRef = useRef(null);
 
   useEffect(() => {
     (async () => {
@@ -16,6 +20,7 @@ export default function FixedHeader() {
 
       gsap.registerPlugin(ScrollTrigger);
 
+      // On Load Animations
       gsap.from(picRef.current, {
         opacity: 0,
         y: -window.innerHeight / 2,
@@ -44,16 +49,78 @@ export default function FixedHeader() {
         ease: "power4.inOut"
       });
 
+      // Background Parallax Animation
       gsap.fromTo(
-        `#header-background`,         // TARGET: background image div
+        "#header-background",         // TARGET: background image div
         { y: "0%" },
         { 
           y: "-50%",            // move upward slower than the page
           ease: "none",
           scrollTrigger: {
-            trigger: `#header-container`, // TRIGGER: entire section
+            trigger: "#header-container", // TRIGGER: entire section
             start: "top bottom",  // start when section enters viewport
             end: "bottom top",    // end when section leaves viewport
+            scrub: true
+          }
+        }
+      );
+
+      // Fade Out Animations
+      gsap.to(
+        picScrollRef.current,         
+        { 
+          y: "-50%",            
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#header-container", 
+            start: "bottom 85%",  
+            end: "bottom 70%",    
+            scrub: true
+          }
+        }
+      );
+
+      gsap.to(
+        nameScrollRef.current,         
+        { 
+          y: "-50%",            
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#header-container", 
+            start: "bottom 85%",  
+            end: "bottom 65%",    
+            scrub: true
+          }
+        }
+      );
+
+      gsap.to(
+        titleScrollRef.current,         
+        { 
+          y: "-50%",            
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#header-container", 
+            start: "bottom 80%",  
+            end: "bottom 60%",    
+            scrub: true
+          }
+        }
+      );
+
+      gsap.to(
+        iconsScrollRef.current,         
+        { 
+          y: "-50%",            
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#header-container", 
+            start: "bottom 75%",  
+            end: "bottom 55%",    
             scrub: true
           }
         }
@@ -63,18 +130,35 @@ export default function FixedHeader() {
   }, []);
 
   useEffect(() => {
-    const arrow = document.getElementById("scroll-arrow");
-    const nextSection = document.getElementById("hello-section");
 
-    if (arrow && nextSection) {
-      const handleClick = () => {
-        nextSection.scrollIntoView({ behavior: "smooth" });
-      };
-      arrow.addEventListener("click", handleClick);
+    (async () => {
 
-      // Cleanup on unmount
-      return () => arrow.removeEventListener("click", handleClick);
-    }
+      const { gsap } = await import('gsap');
+      const { ScrollToPlugin } = await import("gsap/ScrollToPlugin");
+
+      gsap.registerPlugin(ScrollToPlugin);
+
+      const arrow = document.getElementById("scroll-arrow");
+      const nextSection = document.getElementById("hello-section");
+
+      if (arrow && nextSection) {
+        const handleClick = () => {
+          gsap.to(
+            window,         
+            { 
+              duration: 2,
+              scrollTo: "#hello-section",
+              ease: "power2.inOut",
+            }
+          );
+        };
+        arrow.addEventListener("click", handleClick);
+
+        // Cleanup on unmount
+        return () => arrow.removeEventListener("click", handleClick);
+      }
+
+    })();
   }, []);
 
   return (
@@ -88,11 +172,19 @@ export default function FixedHeader() {
       ></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
 
-        <img ref={picRef} src="/images/Steve.jpeg" alt="Steve Suhr Profile Image" className="w-64 rounded-xl" />
-        <h1 ref={nameRef} className="text-4xl sm:text-5xl font-bold mt-4 mx-10">Steve Suhr</h1>
-        <p ref={titleRef} className="my-4 text-xl">Senior Software Engineer</p>
-        <div ref={iconsRef} className="flex">
-          <Icons />
+        <div ref={picScrollRef}>
+          <img ref={picRef} src="/images/Steve.jpeg" alt="Steve Suhr Profile Image" className="w-64 rounded-xl" />
+        </div>
+        <div ref={nameScrollRef}>
+          <h1 ref={nameRef} className="text-4xl sm:text-5xl font-bold mt-4 mx-10">Steve Suhr</h1>
+        </div>
+        <div ref={titleScrollRef}>
+          <p ref={titleRef} className="my-4 text-xl">Senior Software Engineer</p>
+        </div>
+        <div ref={iconsScrollRef}>
+          <div ref={iconsRef} className="flex">
+            <Icons />
+          </div>
         </div>
 
         <div id="scroll-arrow" className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-white">
