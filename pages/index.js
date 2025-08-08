@@ -1,4 +1,4 @@
-import FixedHeader from '../components/FixedHeader';  
+import MainHeader from '../components/MainHeader';  
 import ParallaxHeader from "../components/ParallaxHeader";
 import HelloSection from '../components/HelloSection';
 import SkillsSection from '../components/SkillsSection';
@@ -18,69 +18,18 @@ export default function Home() {
 
       gsap.registerPlugin(ScrollTrigger);
 
-      // gsap.to(`#heading-panes`, {
-      //   y: "90%", 
-      //   ease: "none", 
-      //   scrollTrigger: {
-      //     trigger: `#heading-panes`,
-      //     start: "top bottom", 
-      //     // end: "bottom top", 
-      //     scrub: true 
-      //   }
-      // });
-
-      // gsap.fromTo(`#skills-header`, {
-      //   y: "0%"
-      // }, {
-      //   y: "-50%", 
-      //   ease: "none", 
-      //   scrollTrigger: {
-      //     trigger: `#hello-section`,
-      //     start: "top top", 
-      //     // end: "+=400%", 
-      //     scrub: true 
-      //   }
-      // });
-
-      gsap.fromTo(
-        "#skills-header-bg",         // TARGET: background image div
-        { y: "0%" },
-        { 
-          y: "-50%",            // move upward slower than the page
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#skills-header", // TRIGGER: entire section
-            start: "top bottom",  // start when section enters viewport
-            end: "bottom top",    // end when section leaves viewport
-            scrub: true
-          }
-        }
-      );
-
-      gsap.fromTo(
-        "#jobs-header-bg",         // TARGET: background image div
-        { y: "0%" },
-        { 
-          y: "-50%",            // move upward slower than the page
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#jobs-header", // TRIGGER: entire section
-            start: "top bottom",  // start when section enters viewport
-            end: "bottom top",    // end when section leaves viewport
-            scrub: true
-          }
-        }
-      );
 
     })();
   }, []);  
 
   return (
     <div className="relative">
-      <FixedHeader />
-      <main className="w-full">
+      <header>
+        <MainHeader />
+      </header>
+      <main>
 
-        <div className="relative w-full mt-[100vh] z-20">
+        <div id="hello-section" className="relative w-full z-20">
           <HelloSection />
         </div>
 
@@ -106,6 +55,9 @@ export default function Home() {
         </div> 
 
       </main>
+      <footer>
+
+      </footer>
     </div>
   );
 }
