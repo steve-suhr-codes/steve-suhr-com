@@ -23,9 +23,8 @@ export default function AnimatedSection({ title, description }) {
             duration: 1,
             scrollTrigger: {
               trigger: ref.current,
-              start: 'top 85%',
+              start: 'top 95%',
               toggleActions: 'play none none reverse',
-              // markers: true
             },
           }
         );
@@ -36,7 +35,7 @@ export default function AnimatedSection({ title, description }) {
   }, []);
 
   return (
-    <div ref={ref} className="my-20 p-8 bg-white rounded-xl shadow-lg max-w-2xl mx-auto">
+    <div ref={ref} className="my-10 p-8 bg-white rounded-xl shadow-lg max-w-2xl mx-auto">
       <h2 className="text-3xl font-semibold mb-2">{title}</h2>
       <p>{description}</p>
     </div>
