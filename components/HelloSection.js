@@ -23,9 +23,8 @@ export default function HelloSection() {
             duration: 1,
             scrollTrigger: {
               trigger: ref.current,
-              start: 'top 85%',
+              start: 'top 95%',
               toggleActions: 'play none none reverse',
-              // markers: true
             },
           }
         );
@@ -41,7 +40,7 @@ export default function HelloSection() {
       <section className="absolute inset-0 z-0 bg-gradient-to-r from-gray-200 to-gray-100" />
 
       {/* Content layer */}
-      <div className="relative z-10 min-h-screen w-full px-6 sm:px-10 md:px-20 py-12 sm:py-16 md:py-20
+      <div className="relative z-10 w-full px-6 sm:px-10 md:px-20 py-12 sm:py-16 md:py-20
                       flex items-center justify-center">
         <div ref={ref} className="flex flex-col p-6 sm:p-8 justify-center items-center rounded-xl shadow-lg 
                         max-w-2xl mx-auto bg-white">

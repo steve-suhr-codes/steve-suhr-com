@@ -21,33 +21,33 @@ export default function FixedHeader() {
       gsap.registerPlugin(ScrollTrigger);
 
       // On Load Animations
-      gsap.from(picRef.current, {
-        opacity: 0,
-        y: -window.innerHeight / 2,
-        duration: 3,
-        ease: "power4.inOut"
-      });
+      // gsap.from(picRef.current, {
+      //   opacity: 0,
+      //   y: -window.innerHeight / 2,
+      //   duration: 3,
+      //   ease: "power4.inOut"
+      // });
 
-      gsap.from(nameRef.current, {
-        opacity: 0,
-        x: -window.innerWidth / 2,
-        duration: 3,
-        ease: "power4.inOut"
-      });
+      // gsap.from(nameRef.current, {
+      //   opacity: 0,
+      //   x: -window.innerWidth / 2,
+      //   duration: 3,
+      //   ease: "power4.inOut"
+      // });
 
-      gsap.from(titleRef.current, {
-        opacity: 0,
-        x: window.innerWidth / 2,
-        duration: 3,
-        ease: "power4.inOut"
-      });
+      // gsap.from(titleRef.current, {
+      //   opacity: 0,
+      //   x: window.innerWidth / 2,
+      //   duration: 3,
+      //   ease: "power4.inOut"
+      // });
 
-      gsap.from(iconsRef.current, {
-        opacity: 0,
-        y: window.innerHeight / 2,
-        duration: 3,
-        ease: "power4.inOut"
-      });
+      // gsap.from(iconsRef.current, {
+      //   opacity: 0,
+      //   y: window.innerHeight / 2,
+      //   duration: 3,
+      //   ease: "power4.inOut"
+      // });
 
       // Background Parallax Animation
       gsap.fromTo(
@@ -162,10 +162,10 @@ export default function FixedHeader() {
   }, []);
 
   return (
-    <div id="header-container" className="relative h-[100vh] z-0">
+    <div id="header-container" className="relative h-[100svh] overflow-hidden z-0">
       <div 
         id="header-background" 
-        className="absolute inset-0 h-[200%] bg-[url('/images/building-background.jpeg')] bg-cover bg-center z-5"
+        className="absolute inset-0 h-[200vh] bg-[url('/images/building-background.jpeg')] bg-cover bg-center z-5"
       ></div>
       <div 
         className="absolute inset-0 h-full z-6 bg-gradient-to-r from-blue-900 to-blue-500 opacity-75"

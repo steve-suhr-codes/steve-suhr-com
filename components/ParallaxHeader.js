@@ -30,7 +30,7 @@ export default function ParallaxHeader({ text, containerId, bgId }) {
   }, []);  
 
   return (
-    <div id={containerId} className="relative h-[25vh] z-10">
+    <div id={containerId} className="relative h-[25vh] overflow-hidden z-10">
       <div
         id={bgId}
         className="absolute inset-0 h-[200%] bg-[url('/images/glass-background.avif')] bg-cover bg-center z-5"

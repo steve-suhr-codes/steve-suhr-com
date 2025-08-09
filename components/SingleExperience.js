@@ -23,7 +23,7 @@ export default function SingleExperience({ children, company, location, title, d
             duration: 1,
             scrollTrigger: {
               trigger: ref.current,
-              start: 'top 85%',
+              start: 'top 95%',
               toggleActions: 'play none none reverse',
               // markers: true
             },
@@ -38,7 +38,7 @@ export default function SingleExperience({ children, company, location, title, d
   return (
     <div
       ref={ref}
-      className="my-16 p-8 bg-white rounded-xl shadow-lg max-w-3xl mx-auto space-y-4"
+      className="my-10 p-8 bg-white rounded-xl shadow-lg max-w-3xl mx-auto space-y-4"
     >
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
         <h2 className="text-2xl font-bold text-gray-900">{company}</h2>
