@@ -162,7 +162,7 @@ export default function FixedHeader() {
   }, []);
 
   return (
-    <div id="header-container" className="relative h-[100svh] overflow-hidden z-0">
+    <div id="header-container" className="relative h-[calc(100svh-4rem)] overflow-hidden z-0">
       <div 
         id="header-background" 
         className="absolute inset-0 h-[200vh] bg-[url('/images/building-background.jpeg')] bg-cover bg-center z-5"
