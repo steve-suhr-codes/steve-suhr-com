@@ -29,6 +29,7 @@ export default function Home() {
     
     <>
       <Head>
+        <title>Steve Suhr - Resume</title>
         <link
           rel="preload"
           as="image"
