@@ -81,6 +81,13 @@ export default function TopNav({ isAuthed }) {
             Resume
           </Link>
           <Link
+            href="/todo"
+            className="block font-semibold py-2 hover:underline hover:decoration-white"
+            onClick={() => setOpen(false)}
+          >
+            To Do
+          </Link>
+          <Link
             href={isAuthed ? "/account" : "/login"}
             className="block font-semibold py-2 hover:underline hover:decoration-white"
             onClick={() => setOpen(false)}
