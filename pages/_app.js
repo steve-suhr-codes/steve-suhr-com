@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
       <SessionProvider session={session}>
         <TopNav isAuthed={isAuthed} />
         <div className="pt-16">
-          <Component {...rest} />
+          <Component isAuthed={isAuthed} {...rest} />
         </div>
       </SessionProvider>
     </>
