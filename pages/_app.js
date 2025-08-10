@@ -2,17 +2,27 @@ import '../styles/globals.css';
 import App from "next/app";
 import { SessionProvider, getSession } from "next-auth/react";
 import { getServerSession } from "next-auth";
+import Head from "next/head";
 import TopNav from '../components/TopNav';
 
 function MyApp({ Component, pageProps }) {
   const { session, isAuthed, ...rest } = pageProps;
   return (
-    <SessionProvider session={session}>
-      <TopNav isAuthed={isAuthed} />
-      <div className="pt-16">
-        <Component {...rest} />
-      </div>
-    </SessionProvider>
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </Head>    
+      <SessionProvider session={session}>
+        <TopNav isAuthed={isAuthed} />
+        <div className="pt-16">
+          <Component isAuthed={isAuthed} {...rest} />
+        </div>
+      </SessionProvider>
+    </>
   );
 }
 
