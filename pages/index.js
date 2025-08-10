@@ -1,32 +1,28 @@
 import Head from "next/head";
-
 import MainHeader from '../components/MainHeader';  
 import ParallaxHeader from "../components/ParallaxHeader";
 import HelloSection from '../components/HelloSection';
 import SkillsSection from '../components/SkillsSection';
 import ExperienceSection from '../components/ExperienceSection';  
 import EducationSection from '../components/EducationSection';
-
-import { useEffect } from "react";
 import MainFooter from '../components/MainFooter';
+import { useEffect } from "react";
 
 export default function Home() {
   
-  useEffect(() => {
+  // useEffect(() => {
 
-    (async () => {
+  //   (async () => {
 
-      const { gsap } = await import('gsap');
-      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+  //     const { gsap } = await import('gsap');
+  //     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
-      gsap.registerPlugin(ScrollTrigger);
+  //     gsap.registerPlugin(ScrollTrigger);
 
+  //   })();
+  // }, []);  
 
-    })();
-  }, []);  
-
-  return (
-    
+  return (    
     <>
       <Head>
         <title>Steve Suhr - Resume</title>
