@@ -9,30 +9,26 @@ export default function TopNav({ isAuthed }) {
       <div className="mx-auto h-full flex items-center justify-between px-4">
         {/* Left: Brand (always visible) + desktop links */}
         <div className="flex items-center gap-0">
-          <Link
-            href="/"
-            className="text-xl font-semibold border-r border-white p-2"
-          >
+          <Link href="/" className="text-xl font-semibold md:border-r md:border-white p-2 pr-4">
             Steve Suhr
           </Link>
 
           {/* Desktop links (hidden on small screens) */}
           <div className="hidden md:flex">
-            <Link
-              href="/"
-              className="font-semibold p-2 hover:underline hover:decoration-white"
-            >
+            <Link href="/" className="font-semibold pl-4 p-2 hover:underline hover:decoration-white">
               Resume
+            </Link>
+          </div>
+          <div className="hidden md:flex">
+            <Link href="/todo" className="font-semibold p-2 hover:underline hover:decoration-white">
+              To Do
             </Link>
           </div>
         </div>
 
         {/* Right: Desktop auth link */}
         <div className="hidden md:block">
-          <Link
-            href={isAuthed ? "/account" : "/login"}
-            className="font-semibold hover:underline hover:decoration-white"
-          >
+          <Link href={isAuthed ? "/account" : "/login"} className="font-semibold hover:underline hover:decoration-white">
             {isAuthed ? "My Account" : "Log In"}
           </Link>
         </div>

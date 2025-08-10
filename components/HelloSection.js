@@ -35,9 +35,9 @@ export default function HelloSection() {
   }, []);
 
   return (
-    <div>
+    <>
       {/* Background layer */}
-      <section className="absolute inset-0 z-0 bg-gradient-to-r from-gray-200 to-gray-100" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-gray-200 to-gray-100" />
 
       {/* Content layer */}
       <div className="relative z-10 w-full px-6 sm:px-10 md:px-20 py-12 sm:py-16 md:py-20
@@ -52,7 +52,6 @@ export default function HelloSection() {
           </p>
         </div>
       </div>
-      
-    </div>
+    </>
   );
 }
