@@ -37,7 +37,7 @@ export default function ParallaxHeader({ text, containerId, bgId }) {
       ></div>
       <div className="absolute inset-0 h-full z-6 bg-gradient-to-r from-blue-900 to-blue-500 opacity-75"></div>
       <div className="relative z-10 flex items-center justify-center h-full">
-        <h1 className="px-4 sm:px-10 py-3 text-2xl sm:text-4xl md:text-5xl tracking-widest text-white bg-white/15 whitespace-nowrap">
+        <h1 className="px-4 sm:px-10 py-3 font-semibold text-3xl sm:text-4xl md:text-5xl tracking-widest text-white bg-white/15 whitespace-nowrap">
           {text}
         </h1>
       </div>

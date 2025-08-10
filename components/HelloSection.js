@@ -48,7 +48,7 @@ export default function HelloSection() {
             Hello! I'm Steve
           </h2>
           <p className="text-center leading-loose">
-            I'm a professional software developer with nearly two decades of experience. Most of my expertise is in backend development with a focus in C# and MSSQL. However, I am a full stack developer with experience in HTML, CSS, and JavaScript as well. My projects have been focused on APIs, Web Development, and Web Scraping. I have been involved in hosting my work in the cloud using both Azure and AWS.
+            I'm a professional software developer with nearly two decades of experience. Most of my expertise is in backend development with a focus in C# and MSSQL. However, I am a full stack developer with front end experience as well. I've also been heavily involved in hosting my work in the cloud using both Azure and AWS.
           </p>
         </div>
       </div>

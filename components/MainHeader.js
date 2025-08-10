@@ -143,11 +143,15 @@ export default function FixedHeader() {
 
       if (arrow && nextSection) {
         const handleClick = () => {
+          const topNavHeight = document.querySelector('#top-nav').offsetHeight;
           gsap.to(
             window,         
             { 
               duration: 2,
-              scrollTo: "#hello-section",
+              scrollTo: {
+                y: "#hello-section",
+                offsetY: topNavHeight
+              },
               ease: "power2.inOut",
             }
           );
