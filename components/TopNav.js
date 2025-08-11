@@ -9,7 +9,11 @@ export default function TopNav({ isAuthed }) {
       <div className="mx-auto h-full flex items-center justify-between px-4">
         {/* Left: Brand (always visible) + desktop links */}
         <div className="flex items-center gap-0">
-          <Link href="/" className="text-xl font-semibold md:border-r md:border-white p-2 pr-4">
+          <Link 
+            href="/" 
+            className="text-xl font-semibold md:border-r md:border-white p-2 pr-4"
+            onClick={() => setOpen(false)}
+          >
             Steve Suhr
           </Link>
 
