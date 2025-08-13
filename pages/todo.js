@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { getSession } from "next-auth/react";
 
 export async function getServerSideProps(context) {
@@ -8,7 +10,15 @@ export async function getServerSideProps(context) {
   return { props: { session } };
 }
 
-export default function ToDo({ session }) {
+export default function ToDo({ isAuthed, session }) {
+
+  const router = useRouter();
+  useEffect(() => {
+    if (!isAuthed) {
+      router.replace("/login");
+    }
+  }, [isAuthed, router]);
+  if (!isAuthed) return null; // 🚀 No flicker
 
   return (
     <>
