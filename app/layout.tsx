@@ -3,6 +3,11 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../pages/api/auth/[...nextauth]';
 import TopNav from '../components/TopNav';
 
+export const metadata = {
+  title: 'Steve Suhr',
+  description: 'Steve Suhr\'s Resume and Side Projects',
+}
+
 export default async function RootLayout({
   children,
 }: {
