@@ -1,10 +1,21 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { redirect } from "next/navigation";
+import { prisma } from "@/lib/prisma";
 
 export const metadata = { title: "To Do Project" };
 
 export default async function ToDoPage() {
+
+  async function create(formData: FormData) {
+    'use server';
+
+    //await prisma.user.create({data: { email: "test@test.com" }});
+    //await prisma.todo.create({ data: { userId: "testUser", title: "Title TODO" } });
+  }
+
+
+
   const session = await getServerSession(authOptions);
   if (!session) redirect("/login?callbackUrl=/todo");
 
@@ -15,6 +26,11 @@ export default async function ToDoPage() {
           Welcome, {session.user?.name}
         </h1>
         <p>The To Do Project is still TODO!</p>
+
+        <form action={create}>
+          <input type="submit" value="SUBMIT" /> 
+        </form>
+
       </div>
     </div>
   );
