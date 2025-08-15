@@ -10,11 +10,14 @@ export default async function ToDoPage() {
   async function create(formData: FormData) {
     'use server';
 
-    //await prisma.user.create({data: { email: "test@test.com" }});
-    //await prisma.todo.create({ data: { userId: "testUser", title: "Title TODO" } });
+    const session = await getServerSession(authOptions);
+    if (!session) redirect("/login?callbackUrl=/todo");
+  
+    var userId = (session?.user as any)?.id;
+    var title = formData.get('title');
+
+    //await prisma.todo.create({ data: { userId, title } });
   }
-
-
 
   const session = await getServerSession(authOptions);
   if (!session) redirect("/login?callbackUrl=/todo");
@@ -28,6 +31,7 @@ export default async function ToDoPage() {
         <p>The To Do Project is still TODO!</p>
 
         <form action={create}>
+          <input type="text" name="title" placeholder="To Do Item" /> <br />
           <input type="submit" value="SUBMIT" /> 
         </form>
 
