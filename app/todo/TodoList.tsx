@@ -79,13 +79,13 @@ export default function TodoList({ initialTodos }: { initialTodos: Todo[] } ) {
             type="text"
             placeholder="Add a todo..."
             value={newTodoTitle}
-            disabled={isCreatePending || todos.length >= 100}
+            disabled={isCreatePending || todos.length >= maxTodos}
             onChange={(e) => setNewTodoTitle(e.target.value)}
-            className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+            className="flex-1 input-textbox"
           />
           <button
             type="submit"
-            disabled={isCreatePending || todos.length >= 100}
+            disabled={isCreatePending || todos.length >= maxTodos}
             className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Add

@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import TodoList, { type Todo } from "./TodoList";
 
-export const metadata = { title: "To Do Project" };
+export const metadata = { title: "Steve Suhr - To Do Project" };
 export const dynamic = "force-dynamic"; // optional for fresh data on each load
 
 export default async function ToDoPage() {

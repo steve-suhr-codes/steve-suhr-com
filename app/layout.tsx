@@ -24,7 +24,7 @@ export default async function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body>
+      <body className="bg-gradient-to-r from-gray-200 to-gray-100">
           <TopNav isAuthed={isAuthed} />
           <div className="pt-16">{children}</div>
       </body>
