@@ -36,7 +36,7 @@ export default async function Account() {
           </div>
 
           {/* User Name */}
-          <CreateUserName initialUsername={user.username} />
+          <CreateUserName initialUsername={user?.username ?? ""} />
         </div>
       </div>
   );
