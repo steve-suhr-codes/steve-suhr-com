@@ -25,6 +25,18 @@ model Todo {
   @@index([userId])
 }
 
+model Note {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  title     String
+  note      String 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
 /** NextAuth canonical models (v4) **/
 model User {
   id             String    @id @default(cuid())
@@ -38,6 +50,7 @@ model User {
 
   // your relation
   todos          Todo[]
+  notes          Note[]
 }
 
 model Account {

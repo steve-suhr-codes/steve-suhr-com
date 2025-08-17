@@ -30,6 +30,11 @@ export default function TopNav({ isAuthed }) {
               To Do
             </Link>
           </div>
+          <div className="hidden md:flex">
+            <Link href="/notes" className="font-semibold p-2 hover:underline hover:decoration-white">
+              Note Sharing
+            </Link>
+          </div>
         </div>
 
         {/* Right: Desktop auth link */}
@@ -92,6 +97,13 @@ export default function TopNav({ isAuthed }) {
             onClick={() => setOpen(false)}
           >
             To Do
+          </Link>
+          <Link
+            href="/notes"
+            className="block font-semibold py-2 hover:underline hover:decoration-white"
+            onClick={() => setOpen(false)}
+          >
+            Note Sharing
           </Link>
           <Link
             href={isAuthed ? "/account" : "/login"}

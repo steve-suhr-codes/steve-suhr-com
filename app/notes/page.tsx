@@ -2,21 +2,20 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import TodoList, { type Todo } from "./TodoList";
 
-export const metadata = { title: "Steve Suhr - To Do Project" };
-export const dynamic = "force-dynamic"; // optional for fresh data on each load
 
-export default async function ToDoPage() {
+export default async function NotesPage() {
   const session = await getServerSession(authOptions);
   const userId = (session?.user as any)?.id;
-  if (!userId) redirect("/login?callbackUrl=/todo&validationMessage=Login to use To Do");
+  if (!userId) 
+    redirect("/login?callbackUrl=/notes&validationMessage=Login to use Note Sharing");
 
-  const todos = await prisma.todo.findMany({
-    where: { userId },
-    orderBy: { createdAt: "desc" },
-    select: { id: true, title: true, done: true }
-  });
+  const user = await prisma.user.findUnique({
+     where: { id: userId },
+     select: { username: true }
+   });
+   if (!user?.username || user?.username.length == 0) 
+    redirect("/account?callbackUrl=/notes&validationMessage=User Name required to use Note Sharing");
 
   return (
     <div className="relative w-full z-0 bg-gradient-to-r from-gray-200 to-gray-100">
@@ -24,8 +23,10 @@ export default async function ToDoPage() {
         <h1 className="w-full text-3xl font-semibold">
           Welcome, {session?.user?.name ?? "you"}
         </h1>
-        <p>Here is a little side project that will keep track of your to do items.</p>
-        <TodoList initialTodos={todos as Todo[]} />
+        <p>Here is a little side project that will let you create and share notes.</p>
+        <p>User Name: {user.username}</p>
+
+
       </div>
     </div>
   );
