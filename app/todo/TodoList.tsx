@@ -97,7 +97,7 @@ export default function TodoList({ initialTodos }: { initialTodos: Todo[] } ) {
           {todos.map((t) => (
             <div
               key={t.id}
-              className="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 hover:bg-gray-100"
+              className="flex items-center justify-between li-gray"
             >
               <label className="flex items-center gap-3">
                 <input

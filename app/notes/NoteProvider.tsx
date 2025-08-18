@@ -1,26 +1,33 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
+import type { Prisma, Note as DbNote } from "@prisma/client";
+
+export type NoteRow = Pick<DbNote, 'id' | 'title' | 'noteJson' | 'noteHtml'>;
 
 type NoteCtx = {
-  currentNoteId: string | null;
-  setCurrentNoteId: (id: string | null) => void;
+  notes: NoteRow[];
+  currentNote: NoteRow | null;
+  setCurrentNote: (id: NoteRow | null) => void;
 };
 
 const Ctx = createContext<NoteCtx | null>(null);
 
 export default function NoteProvider({
-  initialNoteId, 
+  notes, 
   children
 }: {
-  initialNoteId?: string | null;
+  notes: NoteRow[];
   children: ReactNode;
 }) {
-  const [currentNoteId, setCurrentNoteId] = useState<string | null>(
-    initialNoteId ?? null
-  );
+  const [currentNote, setCurrentNote] = useState<NoteRow | null>(null);
+
   return (
-    <Ctx.Provider value={{ currentNoteId, setCurrentNoteId }}>
+    <Ctx.Provider value={{ 
+      notes, 
+      currentNote, 
+      setCurrentNote, 
+    }}>
       {children}
     </Ctx.Provider>
   );

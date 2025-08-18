@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNote } from "./NoteProvider";
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
@@ -8,15 +8,14 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
-import { $getRoot } from 'lexical';
 import { $generateHtmlFromNodes } from '@lexical/html';
 import { EditorState, LexicalEditor } from 'lexical';
-import { useMemo } from 'react';
-import DOMPurify from 'isomorphic-dompurify';
+import LoadContentPlugin from "./LoadContentPlugin";
+import { createNote } from "./actions";
 
 export default function NoteEditor() {
-  const initialConfig = {
-    namespace: 'MyEditor', // unique namespace
+  const initialConfigRead = {
+    namespace: 'ReadEditor', // unique namespace
     theme: {
       // Optional: customize CSS classes for nodes
       paragraph: 'mb-2',
@@ -25,24 +24,38 @@ export default function NoteEditor() {
       console.error(error);
     },
   };
-  const { currentNoteId, setCurrentNoteId } = useNote();
-  const [title, setTitle] = useState("");
-  const [html, setHtml] = useState("");
+  const initialConfigWrite = {
+    namespace: 'WriteEditor', // unique namespace
+    theme: {
+      // Optional: customize CSS classes for nodes
+      paragraph: 'mb-2',
+    },
+    onError(error: any) {
+      console.error(error);
+    },
+  };
+  const { notes, currentNote, setCurrentNote } = useNote();
+  const [title, setTitle] = useState(currentNote?.title ?? "");
+  const [json, setJson] = useState(currentNote?.noteJson ?? "");
+  const [html, setHtml] = useState(currentNote?.noteHtml ?? "");
   const [isSaving, setIsSaving] = useState(false);
-  const [showEditor, setShowEditor] = useState(!currentNoteId);
-
+  const [showEditor, setShowEditor] = useState(!currentNote);
   // Hold the latest EditorState so the Save button can read it
   const latestEditorStateRef = useRef<EditorState>(null);
   const latestEditorRef = useRef<LexicalEditor>(null);
 
+  useEffect(() => {
+    // New note selected in NoteList sibling
+    setTitle(currentNote?.title ?? "");
+    setJson(currentNote?.noteJson ?? "");
+    setHtml(currentNote?.noteHtml ?? "");
+    if (currentNote?.id)
+      setShowEditor(false);
+  }, [currentNote?.id]);
+
   function handleChange(editorState: EditorState, editor: LexicalEditor) {
     latestEditorStateRef.current = editorState;
     latestEditorRef.current = editor;
-    //editorState.read(() => {
-      // You can inspect the editor state here, e.g. save to DB
-      // const root = $getRoot();
-      // console.log(root.getTextContent());
-    //});
   }
 
   async function handleSave() {
@@ -51,15 +64,20 @@ export default function NoteEditor() {
     setIsSaving(true);
     try {
       // Get HTML
+      let jsonString = "";
+      let htmlString = "";
       const editorState = latestEditorStateRef.current;
       const editor = latestEditorRef.current;
+
       editorState.read(() => {
-        setHtml($generateHtmlFromNodes(editor as LexicalEditor));
+        htmlString = $generateHtmlFromNodes(editor as LexicalEditor);
+        setHtml(htmlString);
       });
-      //const safeHtml = useMemo(() => DOMPurify.sanitize(html), [html]);
+      jsonString = JSON.stringify(editorState.toJSON());
+      setJson(jsonString);
       
       // Save Note
-      // TODO
+      //const newNote = await createNote(title, jsonString, htmlString);
 
       // Display Note
       setShowEditor(false);
@@ -91,7 +109,7 @@ export default function NoteEditor() {
         </div>
 
         {/* Editor */}
-        <LexicalComposer initialConfig={initialConfig}>
+        <LexicalComposer initialConfig={initialConfigWrite}>
           <div className="border rounded p-2">
             <RichTextPlugin
               contentEditable={
@@ -102,6 +120,7 @@ export default function NoteEditor() {
             />
             <HistoryPlugin />
             <OnChangePlugin onChange={handleChange} />
+            <LoadContentPlugin json={json} />
           </div>
         </LexicalComposer>
       </div>
@@ -118,11 +137,16 @@ export default function NoteEditor() {
             Edit
           </button>
         </div>
-
-        <div
-          className="prose max-w-none"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <LexicalComposer initialConfig={initialConfigRead}>
+          <div>
+            <RichTextPlugin
+              contentEditable={<ContentEditable className="outline-none" />}
+              placeholder={null}
+              ErrorBoundary={LexicalErrorBoundary}
+            />
+            <LoadContentPlugin json={json} />
+          </div>
+        </LexicalComposer>
       </div>
     </>
   );

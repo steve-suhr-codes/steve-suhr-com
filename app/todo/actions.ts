@@ -10,7 +10,7 @@ export async function createTodo(id: string, title: string, done: boolean) {
   if (!userId) throw new Error("Not signed in.");
 
   const todo = await prisma.todo.create({
-      data: { id, userId, title, done  }
+    data: { id, userId, title, done  }
   });
 
   return todo;
