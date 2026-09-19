@@ -1,6 +1,4 @@
 import '../styles/globals.css';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../pages/api/auth/[...nextauth]';
 import TopNav from '../components/TopNav';
 import { Providers } from './providers';
 
@@ -9,13 +7,11 @@ export const metadata = {
   description: "Steve Suhr's Resume and Side Projects",
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession(authOptions as any);
-  const isAuthed = !!session;
   return (
     <html lang="en">
       <head>
@@ -27,7 +23,7 @@ export default async function RootLayout({
       </head>
       <body>
         <Providers>
-          <TopNav isAuthed={isAuthed} />
+          <TopNav />
           <div className="pt-16">{children}</div>
         </Providers>
       </body>
