@@ -8,14 +8,14 @@ export default function LoginForm() {
   const callbackUrl = sp?.get('callbackUrl') ?? '/account';
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100svh-4rem)]">
-      <div className="flex items-center gap-6 bg-white shadow-md rounded-xl p-6 min-w-[300px]">
-        <div className="flex flex-col w-full items-center">
-          <h1 className="text-xl font-semibold">Sign In</h1>
-          <p className="text-gray-500">Access your account</p>
+    <div className="resume-page">
+      <div className="resume-wrap">
+        <div className="resume-login">
+          <h1>Sign In</h1>
+          <p>Access your account to continue.</p>
           <button
             onClick={() => signIn('google', { callbackUrl })}
-            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            className="resume-login-btn"
           >
             Continue with Google
           </button>

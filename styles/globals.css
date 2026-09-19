@@ -253,6 +253,19 @@ html, body {
   flex: none;
 }
 
+/* ─── Inline links in content ───────────────────────────── */
+.resume-main a {
+  color: var(--brass);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--brass) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+
+.resume-main a:hover {
+  text-decoration-color: var(--brass);
+}
+
 /* ─── Intro ─────────────────────────────────────────────── */
 .resume-intro p {
   max-width: 72ch;
@@ -407,6 +420,52 @@ html, body {
   line-height: 1.75;
   font-size: 15px;
   margin: 0;
+}
+
+/* ─── Login ──────────────────────────────────────────────── */
+.resume-login {
+  max-width: 420px;
+  margin: 80px auto 0;
+  padding: 48px 40px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.resume-login h1 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.resume-login p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+}
+
+.resume-login-btn {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--paper);
+  background: var(--brass);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.resume-login-btn:hover { opacity: 0.85; }
+
+.resume-account-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--rule);
+  margin-bottom: 16px;
 }
 
 /* ─── Responsive ─────────────────────────────────────────── */
