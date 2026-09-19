@@ -146,10 +146,6 @@ html, body {
   border-bottom-color: var(--brass);
 }
 
-.resume-meta-download {
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
 
 /* ─── Two-column layout ──────────────────────────────────── */
 .resume-body {
