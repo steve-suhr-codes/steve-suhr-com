@@ -1,69 +1,89 @@
 import Head from "next/head";
-import MainHeader from '../components/MainHeader';  
-import ParallaxHeader from "../components/ParallaxHeader";
 import HelloSection from '../components/HelloSection';
 import SkillsSection from '../components/SkillsSection';
-import ExperienceSection from '../components/ExperienceSection';  
+import ExperienceSection from '../components/ExperienceSection';
 import EducationSection from '../components/EducationSection';
-import MainFooter from '../components/MainFooter';
-import { useEffect } from "react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Home() {
-  
-  // useEffect(() => {
-
-  //   (async () => {
-
-  //     const { gsap } = await import('gsap');
-  //     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-
-  //     gsap.registerPlugin(ScrollTrigger);
-
-  //   })();
-  // }, []);  
-
-  return (    
+  return (
     <>
       <Head>
         <title>Steve Suhr - Resume</title>
       </Head>
 
-      <div className="relative">
+      <div className="resume-page">
+        <div className="resume-wrap">
 
-        <header>
-          <MainHeader />
-        </header>
-        
-        <main>
+          <header className="resume-masthead">
+            <p className="resume-eyebrow">Resume · Software Engineering</p>
+            <div className="resume-masthead-inner">
+              <img
+                src="/images/Steve.jpeg"
+                alt="Steve Suhr"
+                className="resume-photo"
+              />
+              <div>
+                <h1>Steve Suhr</h1>
+                <p className="resume-standfirst">Senior Software Engineer</p>
+                <div className="resume-meta">
+                  <a
+                    href="https://www.linkedin.com/in/stevesuhr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://github.com/steve-suhr-codes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
+                    GitHub
+                  </a>
+                  <span>Scottsdale, AZ</span>
+                </div>
+              </div>
+            </div>
+          </header>
 
-          <div id="hello-section" className="relative w-full z-20">
-            <HelloSection />
+          <div className="resume-body">
+            <nav className="resume-toc">
+              <p className="resume-toc-label">Sections</p>
+              <ol>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Job Experience</a></li>
+                <li><a href="#education">Education</a></li>
+              </ol>
+            </nav>
+
+            <main className="resume-main">
+              <section id="intro" className="resume-section">
+                <h2>Intro</h2>
+                <HelloSection />
+              </section>
+
+              <section id="skills" className="resume-section">
+                <h2>Skills</h2>
+                <SkillsSection />
+              </section>
+
+              <section id="experience" className="resume-section">
+                <h2>Job Experience</h2>
+                <ExperienceSection />
+              </section>
+
+              <section id="education" className="resume-section">
+                <h2>Education</h2>
+                <EducationSection />
+              </section>
+            </main>
           </div>
 
-          <ParallaxHeader containerId="skills-header" bgId="skills-header-bg" text="SKILLS" />
-
-          <div id="skills-section" className="relative z-20">
-            <SkillsSection />
-          </div>
-
-          <ParallaxHeader containerId="jobs-header" bgId="jobs-header-bg" text="JOB EXPERIENCE" />
-
-          <div id="experience-section" className="relative z-20">
-            <ExperienceSection />
-          </div>
-
-          <ParallaxHeader containerId="education-header" bgId="education-header-bg" text="EDUCATION" />
-
-          <div id="education-section" className="relative z-20">
-            <EducationSection />
-          </div>
-
-        </main>
-
-        <footer className="bg-gray-900 text-white py-6">
-          <MainFooter />
-        </footer>
-
+        </div>
       </div>
     </>
   );

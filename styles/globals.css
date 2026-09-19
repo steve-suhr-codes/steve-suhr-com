@@ -1,3 +1,417 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ─── Design tokens ─────────────────────────────────────── */
+:root {
+  --paper: #FCFBF9;
+  --raised: #FFFFFF;
+  --sunk: #F4F1ED;
+  --ink: #1B1614;
+  --ink-soft: #453C37;
+  --grey: #6E645E;
+  --rule: #E4DDD5;
+  --brass: #8A6220;
+  --brass-bright: #A0742A;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14110F;
+    --raised: #1C1815;
+    --sunk: #221D19;
+    --ink: #F2ECE5;
+    --ink-soft: #D3C9C0;
+    --grey: #9A8D84;
+    --rule: #332C26;
+    --brass: #D6A94F;
+    --brass-bright: #E5BC64;
+  }
+}
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ─── Top nav ────────────────────────────────────────────── */
+.resume-topnav {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.resume-topnav-brand {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* ─── Resume page ────────────────────────────────────────── */
+.resume-page {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+.resume-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+/* ─── Masthead ───────────────────────────────────────────── */
+.resume-masthead {
+  border-bottom: 2px solid var(--ink);
+  padding: 48px 0 28px;
+  margin-bottom: 48px;
+}
+
+.resume-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 20px;
+}
+
+.resume-masthead-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.resume-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.resume-masthead h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.resume-standfirst {
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+
+.resume-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--grey);
+}
+
+.resume-meta a {
+  color: var(--brass);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.resume-meta a:hover {
+  border-bottom-color: var(--brass);
+}
+
+/* ─── Two-column layout ──────────────────────────────────── */
+.resume-body {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+/* ─── TOC nav ─────────────────────────────────────────────── */
+.resume-toc {
+  position: sticky;
+  top: 80px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.resume-toc-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin: 0 0 14px;
+}
+
+.resume-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  counter-reset: toc;
+}
+
+.resume-toc li {
+  counter-increment: toc;
+  display: flex;
+  gap: 10px;
+}
+
+.resume-toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--brass);
+  padding-top: 3px;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.resume-toc a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.resume-toc a:hover,
+.resume-toc a:focus-visible {
+  color: var(--brass);
+  border-bottom-color: var(--brass);
+}
+
+/* ─── Main content ────────────────────────────────────────── */
+.resume-main {
+  min-width: 0;
+  counter-reset: sec;
+}
+
+.resume-section {
+  margin-bottom: 64px;
+  scroll-margin-top: 80px;
+}
+
+.resume-section > h2 {
+  counter-increment: sec;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 25px;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0 0 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  color: var(--ink);
+}
+
+.resume-section > h2::before {
+  content: counter(sec, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--brass);
+  letter-spacing: 0.08em;
+  flex: none;
+}
+
+/* ─── Intro ─────────────────────────────────────────────── */
+.resume-intro p {
+  max-width: 72ch;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ─── Skills ─────────────────────────────────────────────── */
+.resume-skill-group {
+  margin-bottom: 28px;
+}
+
+.resume-skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.resume-skill-title {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 10px;
+}
+
+.resume-skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+.resume-skill-list li {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin-bottom: 0;
+}
+
+/* ─── Experience ─────────────────────────────────────────── */
+.resume-job {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.resume-job:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.resume-job-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-bottom: 4px;
+}
+
+.resume-job-company {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+.resume-job-location {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--grey);
+}
+
+.resume-job-role-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-bottom: 12px;
+}
+
+.resume-job-role {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.resume-job-dates {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--grey);
+}
+
+.resume-job-body p {
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  max-width: 74ch;
+  font-size: 15px;
+}
+
+.resume-job-body ul {
+  margin: 0;
+  padding-left: 20px;
+  max-width: 74ch;
+}
+
+.resume-job-body li {
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+/* ─── Education ──────────────────────────────────────────── */
+.resume-edu-school {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.resume-edu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--grey);
+  margin-bottom: 8px;
+}
+
+.resume-edu-degree {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.resume-edu-body {
+  color: var(--ink-soft);
+  max-width: 72ch;
+  line-height: 1.75;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .resume-body {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .resume-toc {
+    position: static;
+    margin-bottom: 44px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .resume-toc ol {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
