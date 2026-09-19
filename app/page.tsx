@@ -3,6 +3,7 @@ import SkillsSection from '../components/SkillsSection';
 import ExperienceSection from '../components/ExperienceSection';
 import EducationSection from '../components/EducationSection';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { MdFileDownload } from 'react-icons/md';
 
 export const metadata = { title: 'Steve Suhr - Resume' };
 
@@ -24,6 +25,7 @@ export default function Home() {
               <h1>Steve Suhr</h1>
               <p className="resume-standfirst">Senior Software Engineer</p>
               <div className="resume-meta">
+                <span>Phoenix, AZ</span>
                 <a
                   href="https://www.linkedin.com/in/stevesuhr/"
                   target="_blank"
@@ -40,7 +42,14 @@ export default function Home() {
                   <FaGithub style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
                   GitHub
                 </a>
-                <span>Phoenix, AZ</span>
+                <a
+                  href="/SteveSuhrResume.pdf"
+                  download
+                  className="resume-meta-download"
+                >
+                  <MdFileDownload style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
+                  Resume
+                </a>
               </div>
             </div>
           </div>

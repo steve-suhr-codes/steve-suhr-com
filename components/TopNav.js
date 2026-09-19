@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { MdFileDownload } from 'react-icons/md';
 
 export default function TopNav({ isAuthed }) {
   return (
@@ -27,6 +28,14 @@ export default function TopNav({ isAuthed }) {
           aria-label="GitHub"
         >
           <FaGithub />
+        </a>
+        <a
+          href="/SteveSuhrResume.pdf"
+          download
+          className="resume-topnav-icon"
+          aria-label="Download Resume PDF"
+        >
+          <MdFileDownload />
         </a>
 
         {/* Desktop links — commented out, replaced by section nav on the resume page */}
