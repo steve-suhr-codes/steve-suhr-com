@@ -1,12 +1,10 @@
 import SingleSkill from '../components/SingleSkill';
 
-export default function() {
+export default function SkillsSection() {
   return (
-    <section className="bg-gradient-to-r from-gray-200 to-gray-100 relative z-20 p-6 sm:p-10 md:p-20">
-      <SingleSkill
-        title="C#"
-      >
-        <ul className="columns-2 md:columns-3 lg:columns-4 gap-4">
+    <div>
+      <SingleSkill title="C#">
+        <ul className="resume-skill-list">
           <li>.NET 8+</li>
           <li>.NET Core</li>
           <li>.NET Framework</li>
@@ -21,10 +19,8 @@ export default function() {
         </ul>
       </SingleSkill>
 
-      <SingleSkill
-        title="SQL"
-      >
-        <ul className="columns-2 md:columns-3 lg:columns-4 gap-4">
+      <SingleSkill title="SQL">
+        <ul className="resume-skill-list">
           <li>MSSQL</li>
           <li>TSQL</li>
           <li>Stored Procedures</li>
@@ -37,10 +33,8 @@ export default function() {
         </ul>
       </SingleSkill>
 
-      <SingleSkill
-        title="Front End"
-      >
-        <ul className="columns-2 md:columns-3 lg:columns-4 gap-4">
+      <SingleSkill title="Front End">
+        <ul className="resume-skill-list">
           <li>HTML</li>
           <li>CSS</li>
           <li>SASS</li>
@@ -50,10 +44,8 @@ export default function() {
         </ul>
       </SingleSkill>
 
-      <SingleSkill
-        title="Azure Cloud"
-      >
-        <ul className="columns-2 md:columns-3 lg:columns-4 gap-4">
+      <SingleSkill title="Azure Cloud">
+        <ul className="resume-skill-list">
           <li>Functions</li>
           <li>App Services</li>
           <li>VMs</li>
@@ -64,10 +56,8 @@ export default function() {
         </ul>
       </SingleSkill>
 
-      <SingleSkill
-        title="AWS Cloud"
-      >
-        <ul className="columns-2 md:columns-3 lg:columns-4 gap-4">
+      <SingleSkill title="AWS Cloud">
+        <ul className="resume-skill-list">
           <li>EC2</li>
           <li>ECS</li>
           <li>Lambda</li>
@@ -79,10 +69,8 @@ export default function() {
         </ul>
       </SingleSkill>
 
-      <SingleSkill
-        title="API"
-      >
-        <ul className="columns-2 md:columns-3 lg:columns-4 gap-4">
+      <SingleSkill title="API">
+        <ul className="resume-skill-list">
           <li>REST APIs</li>
           <li>SOAP APIs</li>
           <li>OAuth Client Credentials</li>
@@ -90,10 +78,8 @@ export default function() {
         </ul>
       </SingleSkill>
 
-      <SingleSkill
-        title="CI/CD"
-      >
-        <ul className="columns-2 md:columns-3 lg:columns-4 gap-4">
+      <SingleSkill title="CI/CD">
+        <ul className="resume-skill-list">
           <li>Azure DevOps</li>
           <li>Team Foundation Server</li>
           <li>Git</li>
@@ -104,10 +90,8 @@ export default function() {
         </ul>
       </SingleSkill>
 
-      <SingleSkill
-        title="TDD"
-      >
-        <ul className="columns-2 md:columns-3 lg:columns-4 gap-4">
+      <SingleSkill title="TDD">
+        <ul className="resume-skill-list">
           <li>Dependency Injection</li>
           <li>Unit Testing</li>
           <li>Moq</li>
@@ -116,6 +100,6 @@ export default function() {
           <li>Cypress</li>
         </ul>
       </SingleSkill>
-    </section>
+    </div>
   );
 }
