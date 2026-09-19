@@ -64,6 +64,22 @@ html, body {
 }
 .resume-topnav-icon:hover { opacity: 1; }
 
+.resume-topnav-auth {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--brass);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+  padding: 0;
+}
+
+.resume-topnav-auth:hover { opacity: 1; }
+
 /* ─── Resume page ────────────────────────────────────────── */
 .resume-page {
   background: var(--paper);
