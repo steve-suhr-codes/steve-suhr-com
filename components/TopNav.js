@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { MdFileDownload } from 'react-icons/md';
 
-export default function TopNav({ isAuthed }) {
+export default function TopNav() {
   return (
     <nav id="top-nav" className="resume-topnav fixed top-0 w-full h-16 z-50">
       <div className="h-full flex items-center gap-3 px-6" style={{ maxWidth: '1180px', margin: '0 auto' }}>
