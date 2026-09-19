@@ -40,7 +40,7 @@ export default function Home() {
                   <FaGithub style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
                   GitHub
                 </a>
-                <span>Scottsdale, AZ</span>
+                <span>Phoenix, AZ</span>
               </div>
             </div>
           </div>

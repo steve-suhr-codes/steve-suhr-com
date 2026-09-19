@@ -53,6 +53,17 @@ html, body {
   text-decoration: none;
 }
 
+.resume-topnav-icon {
+  color: var(--brass);
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+.resume-topnav-icon:hover { opacity: 1; }
+
 /* ─── Resume page ────────────────────────────────────────── */
 .resume-page {
   background: var(--paper);
