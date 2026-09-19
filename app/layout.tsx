@@ -2,10 +2,11 @@ import '../styles/globals.css';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../pages/api/auth/[...nextauth]';
 import TopNav from '../components/TopNav';
+import { Providers } from './providers';
 
 export const metadata = {
   title: 'Steve Suhr',
-  description: 'Steve Suhr\'s Resume and Side Projects',
+  description: "Steve Suhr's Resume and Side Projects",
 }
 
 export default async function RootLayout({
@@ -25,8 +26,10 @@ export default async function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>
+        <Providers>
           <TopNav isAuthed={isAuthed} />
           <div className="pt-16">{children}</div>
+        </Providers>
       </body>
     </html>
   );
