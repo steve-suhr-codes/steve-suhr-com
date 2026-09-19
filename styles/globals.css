@@ -468,6 +468,135 @@ html, body {
   margin-bottom: 16px;
 }
 
+/* ─── Todo ───────────────────────────────────────────────── */
+.todo-page {
+  max-width: 600px;
+  margin: 64px auto 0;
+}
+
+.todo-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 24px;
+}
+
+.todo-header h1 {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.todo-header p {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--grey);
+  margin: 0;
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.todo-input {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.todo-input:focus { border-color: var(--brass); }
+.todo-input:disabled { opacity: 0.5; }
+
+.todo-add-btn {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--paper);
+  background: var(--brass);
+  border: none;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.todo-add-btn:hover { opacity: 0.85; }
+.todo-add-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.todo-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  transition: background 0.1s;
+}
+
+.todo-item:hover { background: color-mix(in srgb, var(--brass) 4%, var(--paper)); }
+
+.todo-item-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.todo-checkbox {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--brass);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-item-title {
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.todo-item--done .todo-item-title {
+  text-decoration: line-through;
+  color: var(--grey);
+}
+
+.todo-delete-btn {
+  font-size: 11px;
+  color: var(--grey);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.todo-delete-btn:hover { color: var(--ink); }
+
+.todo-empty {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--grey);
+  padding: 12px 0;
+}
+
 /* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   .resume-body {

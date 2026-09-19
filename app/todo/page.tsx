@@ -19,13 +19,15 @@ export default async function ToDoPage() {
   });
 
   return (
-    <div className="relative w-full z-0 bg-gradient-to-r from-gray-200 to-gray-100">
-      <div className="relative flex flex-col z-10 min-h-screen max-w-2xl mx-auto bg-white p-5 gap-5">
-        <h1 className="w-full text-3xl font-semibold">
-          Welcome, {session?.user?.name ?? "you"}
-        </h1>
-        <p>Here is a little side project that will keep track of your to do items.</p>
-        <TodoList initialTodos={todos as Todo[]} />
+    <div className="resume-page">
+      <div className="resume-wrap">
+        <div className="todo-page">
+          <header className="todo-header">
+            <h1>To Do</h1>
+            <p>Welcome, {session?.user?.name ?? "you"}</p>
+          </header>
+          <TodoList initialTodos={todos as Todo[]} />
+        </div>
       </div>
     </div>
   );
