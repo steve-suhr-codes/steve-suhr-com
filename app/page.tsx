@@ -26,30 +26,31 @@ export default function Home() {
               <p className="resume-standfirst">Senior Software Engineer</p>
               <div className="resume-meta">
                 <span>Phoenix, AZ</span>
-                <a
-                  href="https://www.linkedin.com/in/stevesuhr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/steve-suhr-codes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
-                  GitHub
-                </a>
-                <a
-                  href="/SteveSuhrResume.pdf"
-                  download
-                  className="resume-meta-download"
-                >
-                  <MdFileDownload style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
-                  Resume
-                </a>
+                <span className="resume-meta-links">
+                  <a
+                    href="https://www.linkedin.com/in/stevesuhr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://github.com/steve-suhr-codes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
+                    GitHub
+                  </a>
+                  <a
+                    href="/SteveSuhrResume.pdf"
+                    download
+                  >
+                    <MdFileDownload style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
+                    Resume
+                  </a>
+                </span>
               </div>
             </div>
           </div>

@@ -136,6 +136,12 @@ html, body {
   color: var(--grey);
 }
 
+.resume-meta-links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+}
+
 .resume-meta a {
   color: var(--brass);
   text-decoration: none;
