@@ -8,6 +8,7 @@ export default function ExperienceSection() {
         location="Scottsdale, AZ"
         title="Senior .NET Developer"
         dates="JULY 2024 - PRESENT"
+        skills={['C#', 'SQL', 'Front End', 'Azure', 'CI/CD', 'TDD']}
       >
         <p>
           Lead developer of AutoHunter.com which hosts live auctions of vehicles listed by individuals and imported by dealers.
@@ -25,6 +26,7 @@ export default function ExperienceSection() {
         location="Chandler, AZ"
         title="Senior Full Stack .NET Developer"
         dates="JULY 2018 - JANUARY 2024"
+        skills={['C#', 'SQL', 'Front End', 'Azure', 'AWS', 'API', 'TDD']}
       >
         <p>
           Created and enhanced tools that manage a network of 10,000+ gyms across the US. This network provides free gym memberships and classes to seniors.
@@ -42,6 +44,7 @@ export default function ExperienceSection() {
         location="Gilbert, AZ"
         title=".NET Developer"
         dates="JANUARY 2017 - JUNE 2018"
+        skills={['C#', 'SQL', 'Front End', 'API', 'TDD']}
       >
         <p>
           Worked on the associate back office purchasing portal which sells health and nutrition products to sixteen different countries.
@@ -58,6 +61,7 @@ export default function ExperienceSection() {
         location="Scottsdale, AZ"
         title=".NET Developer"
         dates="NOVEMBER 2015 - DECEMBER 2016"
+        skills={['C#', 'SQL', 'API', 'TDD']}
       >
         <p>
           Worked to build promotional websites for big brands as a back end developer.
@@ -75,6 +79,7 @@ export default function ExperienceSection() {
         location="Mesa, AZ"
         title="Software Developer II"
         dates="DECEMBER 2013 - OCTOBER 2015"
+        skills={['C#', 'SQL']}
       >
         <p>
           Worked on the Product Improvement and State Reporting teams for the Synergy Student Information System (SIS) product.
@@ -91,6 +96,7 @@ export default function ExperienceSection() {
         location="Scottsdale, AZ"
         title="Senior Founding Member"
         dates="JUNE 2006 - NOVEMBER 2013"
+        skills={['C#', 'SQL', 'Front End', 'AWS', 'API', 'CI/CD', 'TDD']}
       >
         <p>
           Built SpyFu.com from the ground up. SpyFu is a competitive intelligence tool for search engine marketers specializing in Google AdWord recommendations.

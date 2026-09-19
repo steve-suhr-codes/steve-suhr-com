@@ -1,4 +1,4 @@
-export default function SingleExperience({ children, company, location, title, dates }) {
+export default function SingleExperience({ children, company, location, title, dates, skills }) {
   return (
     <div className="resume-job">
       <div className="resume-job-title-row">
@@ -12,6 +12,13 @@ export default function SingleExperience({ children, company, location, title, d
       <div className="resume-job-body">
         {children}
       </div>
+      {skills?.length > 0 && (
+        <ul className="resume-job-pills">
+          {skills.map((skill) => (
+            <li key={skill} className="resume-job-pill">{skill}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

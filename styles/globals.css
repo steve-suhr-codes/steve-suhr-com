@@ -403,6 +403,25 @@ html, body {
   font-size: 15px;
 }
 
+/* ─── Job skill pills ────────────────────────────────────── */
+.resume-job-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+}
+
+.resume-job-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--brass);
+  border: 1px solid color-mix(in srgb, var(--brass) 40%, transparent);
+  padding: 3px 10px;
+}
+
 /* ─── Education ──────────────────────────────────────────── */
 .resume-edu-school {
   font-family: var(--serif);
