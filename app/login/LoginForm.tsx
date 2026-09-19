@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 
 export default function LoginForm() {
   const sp = useSearchParams();
-  const callbackUrl = sp?.get('callbackUrl') ?? '/account';
+  const callbackUrl = sp?.get('callbackUrl') ?? '/todo';
 
   return (
     <div className="resume-page">

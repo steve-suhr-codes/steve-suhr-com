@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic"; // optional for fresh data on each load
 export default async function ToDoPage() {
   const session = await getServerSession(authOptions);
   const userId = (session?.user as any)?.id;
-  if (!userId) redirect("/login?callback=/todo");
+  if (!userId) redirect("/login?callbackUrl=/todo");
 
   const todos = await prisma.todo.findMany({
     where: { userId },
