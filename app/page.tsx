@@ -64,7 +64,7 @@ export default function Home() {
               <li><a href="#skills">Skills</a></li>
               <li><a href="#experience">Job Experience</a></li>
               <li><a href="#education">Education</a></li>
-              <li><a href="#projects">Projects</a></li>
+              {/* <li><a href="#projects">Projects</a></li> */}
             </ol>
           </nav>
 
@@ -89,13 +89,13 @@ export default function Home() {
               <EducationSection />
             </section>
 
-            <section id="projects" className="resume-section">
+            {/* <section id="projects" className="resume-section">
               <h2>Projects</h2>
               <div className="resume-intro">
                 <p>For now a placeholder TODO list made with Next.js and PostgreSQL.</p>
                 <p><a href="/todo">View the TODO list →</a></p>
               </div>
-            </section>
+            </section> */}
           </main>
         </div>
 
