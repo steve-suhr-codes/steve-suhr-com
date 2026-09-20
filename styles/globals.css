@@ -316,13 +316,16 @@ html, body {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 20px;
+  gap: 6px;
 }
 
 .resume-skill-list li {
-  font-size: 14.5px;
-  color: var(--ink-soft);
-  margin-bottom: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--brass);
+  border: 1px solid color-mix(in srgb, var(--brass) 40%, transparent);
+  padding: 3px 10px;
 }
 
 /* ─── Experience ─────────────────────────────────────────── */
