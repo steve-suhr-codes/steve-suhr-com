@@ -335,6 +335,34 @@ html, body {
   border-bottom: 1px solid var(--rule);
 }
 
+a.resume-job--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 -16px 40px;
+  padding: 16px 16px 40px;
+  border-bottom: 1px solid var(--rule);
+  transition: background 0.15s;
+}
+
+a.resume-job--link:hover {
+  background: color-mix(in srgb, var(--brass) 5%, var(--paper));
+}
+
+a.resume-job--link:hover .resume-job-arrow {
+  opacity: 1;
+  transform: translate(1px, -1px);
+}
+
+.resume-job-arrow {
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
 .resume-job:last-child {
   border-bottom: none;
   padding-bottom: 0;
@@ -426,6 +454,25 @@ html, body {
 }
 
 /* ─── Education ──────────────────────────────────────────── */
+a.resume-edu--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 -16px;
+  padding: 16px 16px 0;
+  transition: background 0.15s;
+}
+
+a.resume-edu--link:hover {
+  background: color-mix(in srgb, var(--brass) 5%, var(--paper));
+}
+
+a.resume-edu--link:hover .resume-job-arrow {
+  opacity: 1;
+  transform: translate(1px, -1px);
+}
+
+
 .resume-edu-school {
   font-family: var(--serif);
   font-size: 20px;

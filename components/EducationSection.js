@@ -1,8 +1,16 @@
+import { FiArrowUpRight } from 'react-icons/fi';
+
 export default function EducationSection() {
   return (
-    <div>
+    <a
+      href="https://www.vt.edu"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="resume-edu resume-edu--link"
+    >
       <h3 className="resume-edu-school">
         Virginia Polytechnic Institute and State University
+        <FiArrowUpRight className="resume-job-arrow" aria-hidden="true" />
       </h3>
       <div className="resume-edu-meta">
         <span>Blacksburg, VA</span>
@@ -16,6 +24,6 @@ export default function EducationSection() {
         undergraduate research with e-textiles/wearable embedded systems,
         AES encryption timing attacks, and feedback-driven e-commerce research.
       </p>
-    </div>
+    </a>
   );
 }

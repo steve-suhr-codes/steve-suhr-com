@@ -1,8 +1,13 @@
-export default function SingleExperience({ children, company, location, title, dates, skills }) {
-  return (
-    <div className="resume-job">
+import { FiArrowUpRight } from 'react-icons/fi';
+
+export default function SingleExperience({ children, company, location, title, dates, skills, url }) {
+  const inner = (
+    <>
       <div className="resume-job-title-row">
-        <h3 className="resume-job-company">{company}</h3>
+        <h3 className="resume-job-company">
+          {company}
+          {url && <FiArrowUpRight className="resume-job-arrow" aria-hidden="true" />}
+        </h3>
         <span className="resume-job-location">{location}</span>
       </div>
       <div className="resume-job-role-row">
@@ -19,6 +24,16 @@ export default function SingleExperience({ children, company, location, title, d
           ))}
         </ul>
       )}
-    </div>
+    </>
   );
+
+  if (url) {
+    return (
+      <a href={url} target="_blank" rel="noopener noreferrer" className="resume-job resume-job--link">
+        {inner}
+      </a>
+    );
+  }
+
+  return <div className="resume-job">{inner}</div>;
 }

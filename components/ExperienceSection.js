@@ -9,6 +9,7 @@ export default function ExperienceSection() {
         title="Senior .NET Developer"
         dates="JULY 2024 - PRESENT"
         skills={['C#', 'SQL', 'Front End', 'Azure', 'CI/CD', 'TDD']}
+        url="https://www.autohunter.com"
       >
         <p>
           Lead developer of AutoHunter.com which hosts live auctions of vehicles listed by individuals and imported by dealers.
@@ -27,6 +28,7 @@ export default function ExperienceSection() {
         title="Senior Full Stack .NET Developer"
         dates="JULY 2018 - JANUARY 2024"
         skills={['C#', 'SQL', 'Front End', 'Azure', 'AWS', 'API', 'TDD']}
+        url="https://www.tivityhealth.com"
       >
         <p>
           Created and enhanced tools that manage a network of 10,000+ gyms across the US. This network provides free gym memberships and classes to seniors.
@@ -45,6 +47,7 @@ export default function ExperienceSection() {
         title=".NET Developer"
         dates="JANUARY 2017 - JUNE 2018"
         skills={['C#', 'SQL', 'Front End', 'API', 'TDD']}
+        url="https://www.isagenix.com"
       >
         <p>
           Worked on the associate back office purchasing portal which sells health and nutrition products to sixteen different countries.
@@ -62,6 +65,7 @@ export default function ExperienceSection() {
         title=".NET Developer"
         dates="NOVEMBER 2015 - DECEMBER 2016"
         skills={['C#', 'SQL', 'API', 'TDD']}
+        url="https://www.prizelogic.com"
       >
         <p>
           Worked to build promotional websites for big brands as a back end developer.
@@ -80,6 +84,7 @@ export default function ExperienceSection() {
         title="Software Developer II"
         dates="DECEMBER 2013 - OCTOBER 2015"
         skills={['C#', 'SQL']}
+        url="https://www.edupoint.com"
       >
         <p>
           Worked on the Product Improvement and State Reporting teams for the Synergy Student Information System (SIS) product.
@@ -97,6 +102,7 @@ export default function ExperienceSection() {
         title="Senior Founding Member"
         dates="JUNE 2006 - NOVEMBER 2013"
         skills={['C#', 'SQL', 'Front End', 'AWS', 'API', 'CI/CD', 'TDD']}
+        url="https://www.spyfu.com"
       >
         <p>
           Built SpyFu.com from the ground up. SpyFu is a competitive intelligence tool for search engine marketers specializing in Google AdWord recommendations.
