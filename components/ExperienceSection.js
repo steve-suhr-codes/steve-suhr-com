@@ -111,7 +111,7 @@ export default function ExperienceSection() {
           <li>Created and maintained SpyFu&apos;s custom data collection of advertiser rankings and metrics.</li>
           <li>Implemented dynamically generated reports built on large datasets that could be white labeled and customized.</li>
           <li>Built the SpyFu purchase pipeline including secure API calls to a payment processor and tracking metrics.</li>
-          <li>Created a chrome extension to automate logins and bypass CAPTCHAs.</li>
+          <li>Created a chrome extension to automate logins and collect metrics.</li>
         </ul>
       </SingleExperience>
     </div>

@@ -4,7 +4,7 @@ import { Providers } from './providers';
 
 export const metadata = {
   title: 'Steve Suhr',
-  description: "Steve Suhr's Resume and Side Projects",
+  description: "Steve Suhr's Resume",
 }
 
 export default function RootLayout({
