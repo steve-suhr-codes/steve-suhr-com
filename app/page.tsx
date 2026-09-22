@@ -4,6 +4,8 @@ import ExperienceSection from '../components/ExperienceSection';
 import EducationSection from '../components/EducationSection';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { MdFileDownload } from 'react-icons/md';
+import { FiArrowRight } from 'react-icons/fi';
+import Link from 'next/link';
 
 export const metadata = { title: 'Steve Suhr - Resume' };
 
@@ -64,7 +66,7 @@ export default function Home() {
               <li><a href="#skills">Skills</a></li>
               <li><a href="#experience">Job Experience</a></li>
               <li><a href="#education">Education</a></li>
-              {/* <li><a href="#projects">Projects</a></li> */}
+              <li><a href="#projects">Projects</a></li>
             </ol>
           </nav>
 
@@ -89,13 +91,60 @@ export default function Home() {
               <EducationSection />
             </section>
 
-            {/* <section id="projects" className="resume-section">
+            <section id="projects" className="resume-section">
               <h2>Projects</h2>
-              <div className="resume-intro">
-                <p>For now a placeholder TODO list made with Next.js and PostgreSQL.</p>
-                <p><a href="/todo">View the TODO list →</a></p>
-              </div>
-            </section> */}
+              <Link href="/projects/this-site" className="resume-job resume-job--link">
+                <div className="resume-job-title-row">
+                  <h3 className="resume-job-company">
+                    This site
+                    <FiArrowRight className="resume-job-arrow" aria-hidden="true" />
+                  </h3>
+                  <span className="resume-job-location">stevesuhr.com</span>
+                </div>
+                <div className="resume-job-role-row">
+                  <p className="resume-job-role">Case study: how I built it</p>
+                  <span className="resume-job-dates">Aug 2025 – Present</span>
+                </div>
+                <div className="resume-job-body">
+                  <p>
+                    Rebuilt my Wix resume by hand as a showcase and a sandbox. Covers the stack
+                    choices, the move from a flashy v1 to a document-style v2, and the design
+                    decisions behind the layout.
+                  </p>
+                </div>
+                <ul className="resume-job-pills">
+                  {['Next.js', 'React', 'TypeScript', 'Tailwind', 'Postgres', 'Prisma', 'NextAuth', 'Vercel'].map((skill) => (
+                    <li key={skill} className="resume-job-pill">{skill}</li>
+                  ))}
+                </ul>
+              </Link>
+
+              <Link href="/todo" className="resume-job resume-job--link">
+                <div className="resume-job-title-row">
+                  <h3 className="resume-job-company">
+                    To-do list
+                    <FiArrowRight className="resume-job-arrow" aria-hidden="true" />
+                  </h3>
+                  <span className="resume-job-location">stevesuhr.com/todo</span>
+                </div>
+                <div className="resume-job-role-row">
+                  <p className="resume-job-role">Full-stack sandbox app</p>
+                  <span className="resume-job-dates">Aug 2025</span>
+                </div>
+                <div className="resume-job-body">
+                  <p>
+                    A small per-user to-do list that exercises the whole path: Google sign-in,
+                    Postgres through Prisma, server actions, and ownership checks on every write.
+                    Sign in with Google to try it.
+                  </p>
+                </div>
+                <ul className="resume-job-pills">
+                  {['Next.js', 'Server Actions', 'Prisma', 'Postgres', 'NextAuth'].map((skill) => (
+                    <li key={skill} className="resume-job-pill">{skill}</li>
+                  ))}
+                </ul>
+              </Link>
+            </section>
           </main>
         </div>
 

@@ -17,10 +17,14 @@
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  color-scheme: light;
 }
 
+/* Dark follows the system setting unless ThemeToggle sets data-theme on <html>.
+   The two dark blocks must stay identical. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper: #14110F;
     --raised: #1C1815;
     --sunk: #221D19;
@@ -30,7 +34,23 @@
     --rule: #332C26;
     --brass: #D6A94F;
     --brass-bright: #E5BC64;
+
+    color-scheme: dark;
   }
+}
+
+:root[data-theme="dark"] {
+  --paper: #14110F;
+  --raised: #1C1815;
+  --sunk: #221D19;
+  --ink: #F2ECE5;
+  --ink-soft: #E0D8D0;
+  --grey: #B8ACA3;
+  --rule: #332C26;
+  --brass: #D6A94F;
+  --brass-bright: #E5BC64;
+
+  color-scheme: dark;
 }
 
 html, body {
@@ -63,6 +83,13 @@ html, body {
   transition: opacity 0.15s;
 }
 .resume-topnav-icon:hover { opacity: 1; }
+
+button.resume-topnav-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
 
 .resume-topnav-auth {
   font-family: var(--mono);
@@ -682,6 +709,47 @@ a.resume-edu--link:hover .resume-job-arrow {
   padding: 12px 0;
 }
 
+/* ─── Case study ─────────────────────────────────────────── */
+.case-stack {
+  margin: 0;
+}
+
+.case-stack-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 4px 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.case-stack-row:first-child {
+  padding-top: 0;
+}
+
+.case-stack-row:last-child {
+  border-bottom: none;
+}
+
+.case-stack dt {
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.case-stack dd {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.case-decisions li {
+  margin-bottom: 16px;
+}
+
+.resume-job-body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   .resume-body {
@@ -700,6 +768,10 @@ a.resume-edu--link:hover .resume-job-arrow {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 8px 20px;
+  }
+
+  .case-stack-row {
+    grid-template-columns: 1fr;
   }
 }
 

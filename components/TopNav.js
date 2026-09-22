@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { MdFileDownload } from 'react-icons/md';
 import AuthLink from './AuthLink';
+import ThemeToggle from './ThemeToggle';
 
 export default function TopNav() {
   return (
@@ -51,7 +52,8 @@ export default function TopNav() {
           </Link>
         </div> */}
 
-        <div className="ml-auto">
+        <div className="ml-auto flex items-center gap-5">
+          <ThemeToggle />
           <AuthLink />
         </div>
       </div>
