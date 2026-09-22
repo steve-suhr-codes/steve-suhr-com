@@ -9,7 +9,7 @@
   --sunk: #F4F1ED;
   --ink: #1B1614;
   --ink-soft: #453C37;
-  --grey: #6E645E;
+  --grey: #5C534D;
   --rule: #E4DDD5;
   --brass: #8A6220;
   --brass-bright: #A0742A;
@@ -25,8 +25,8 @@
     --raised: #1C1815;
     --sunk: #221D19;
     --ink: #F2ECE5;
-    --ink-soft: #D3C9C0;
-    --grey: #9A8D84;
+    --ink-soft: #E0D8D0;
+    --grey: #B8ACA3;
     --rule: #332C26;
     --brass: #D6A94F;
     --brass-bright: #E5BC64;
@@ -98,7 +98,7 @@ html, body {
 
 /* ─── Masthead ───────────────────────────────────────────── */
 .resume-masthead {
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 1px solid color-mix(in srgb, var(--brass) 45%, transparent);
   padding: 48px 0 28px;
   margin-bottom: 48px;
 }
