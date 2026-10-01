@@ -129,7 +129,10 @@ export default function StreakStatsTerms() {
       title="Terms of Service"
       standfirst="The terms for using the Streak Stats app."
       effectiveDate="September 25, 2026"
-      otherPage={{ href: '/streak-stats/privacy', label: 'Privacy Policy' }}
+      links={[
+        { href: '/streak-stats', label: 'Support' },
+        { href: '/streak-stats/privacy', label: 'Privacy Policy' },
+      ]}
       sections={sections}
     />
   );

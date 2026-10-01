@@ -7,13 +7,15 @@ type Props = {
   eyebrow: string;
   title: string;
   standfirst: string;
-  effectiveDate: string;
-  otherPage: { href: string; label: string };
+  /** Legal pages show when they took effect; the support page doesn't. */
+  effectiveDate?: string;
+  /** Related pages, linked in the header. */
+  links: { href: string; label: string }[];
   sections: LegalSection[];
 };
 
-/** Document-style layout for app legal pages (privacy policy, terms), matching the case-study pages. */
-export default function LegalPage({ eyebrow, title, standfirst, effectiveDate, otherPage, sections }: Props) {
+/** Document-style layout for app pages (support, privacy policy, terms), matching the case-study pages. */
+export default function LegalPage({ eyebrow, title, standfirst, effectiveDate, links, sections }: Props) {
   return (
     <div className="resume-page">
       <div className="resume-wrap">
@@ -22,9 +24,13 @@ export default function LegalPage({ eyebrow, title, standfirst, effectiveDate, o
           <h1>{title}</h1>
           <p className="resume-standfirst">{standfirst}</p>
           <div className="resume-meta">
-            <span>Effective {effectiveDate}</span>
+            {effectiveDate ? <span>Effective {effectiveDate}</span> : null}
             <span className="resume-meta-links">
-              <Link href={otherPage.href}>{otherPage.label}</Link>
+              {links.map(({ href, label }) => (
+                <Link key={href} href={href}>
+                  {label}
+                </Link>
+              ))}
             </span>
           </div>
         </header>

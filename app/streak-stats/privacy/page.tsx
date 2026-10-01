@@ -158,7 +158,10 @@ export default function StreakStatsPrivacyPolicy() {
       title="Privacy Policy"
       standfirst="What the Streak Stats app collects, why, and how to delete it."
       effectiveDate="September 25, 2026"
-      otherPage={{ href: '/streak-stats/terms', label: 'Terms of Service' }}
+      links={[
+        { href: '/streak-stats', label: 'Support' },
+        { href: '/streak-stats/terms', label: 'Terms of Service' },
+      ]}
       sections={sections}
     />
   );
