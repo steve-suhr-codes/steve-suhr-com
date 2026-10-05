@@ -28,8 +28,8 @@ const sections: LegalSection[] = [
     title: 'Your account',
     body: (
       <p>
-        You sign in with a Google account, and you&apos;re responsible for activity on your Streak
-        Stats account. You must be at least 13 years old to use Streak Stats.
+        You sign in with a Google account or, on iPhone, with Sign in with Apple, and you&apos;re
+        responsible for activity on your Streak Stats account. You must be at least 13 years old to use Streak Stats.
       </p>
     ),
   },
@@ -128,7 +128,7 @@ export default function StreakStatsTerms() {
       eyebrow="Streak Stats · Legal"
       title="Terms of Service"
       standfirst="The terms for using the Streak Stats app."
-      effectiveDate="September 25, 2026"
+      effectiveDate="September 30, 2026"
       links={[
         { href: '/streak-stats', label: 'Support' },
         { href: '/streak-stats/privacy', label: 'Privacy Policy' },

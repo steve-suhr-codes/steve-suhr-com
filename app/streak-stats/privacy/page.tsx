@@ -13,7 +13,10 @@ const sections: LegalSection[] = [
     title: 'The short version',
     body: (
       <ul>
-        <li>We collect only what the app needs: your Google account basics and the streaks you create.</li>
+        <li>
+          We collect only what the app needs: the basics from your Google or Apple sign-in and the
+          streaks you create.
+        </li>
         <li>We don&apos;t sell your data, show ads, or use analytics or tracking tools.</li>
         <li>You can delete your account and all of your streaks at any time from inside the app.</li>
       </ul>
@@ -29,6 +32,14 @@ const sections: LegalSection[] = [
           link to your profile picture. We never see your Google password.
         </p>
         <p>
+          <strong>From Sign in with Apple (iPhone):</strong> your Apple user ID for Streak Stats, your
+          email address, and your name if you choose to share it. If you pick{' '}
+          <strong>Hide My Email</strong>, we get a private relay address from Apple instead of your
+          real one. We also keep a token from Apple that lets us disconnect Sign in with Apple when
+          you delete your account; it can&apos;t be used to read anything from your Apple account. We
+          never see your Apple password.
+        </p>
+        <p>
           <strong>What you create:</strong> each streak&apos;s label and start date, the dates of any
           restarts, and when streaks were created or changed.
         </p>
@@ -36,6 +47,12 @@ const sections: LegalSection[] = [
           <strong>Technical data:</strong> like most online services, our servers keep short-lived
           logs of requests (such as IP address, time, and the page or action requested) for
           security and troubleshooting.
+        </p>
+        <p>
+          <strong>Crash reports:</strong> if the app or our server runs into an error, it sends a
+          report so we can fix it. A report describes the error and where in our code it happened,
+          plus the app version and your phone&apos;s model and operating system version. Crash reports
+          don&apos;t include your name, email, or streaks, and aren&apos;t tied to your account.
         </p>
         <p>
           On your device, the app stores a sign-in token in the phone&apos;s secure storage so you
@@ -65,9 +82,10 @@ const sections: LegalSection[] = [
           data on our behalf to run the app:
         </p>
         <ul>
-          <li><strong>Google</strong>, for sign-in.</li>
+          <li><strong>Google</strong> and <strong>Apple</strong>, for sign-in.</li>
           <li><strong>Vercel</strong>, which hosts the app&apos;s server.</li>
           <li><strong>Neon</strong>, which hosts the app&apos;s database.</li>
+          <li><strong>Sentry</strong>, which receives crash reports.</li>
         </ul>
         <p>
           We may also disclose information if the law requires it, or to protect the safety and
@@ -96,7 +114,7 @@ const sections: LegalSection[] = [
         <p>
           <strong>To delete everything:</strong> in the app, tap your profile circle, then{' '}
           <strong>Delete account</strong>. This immediately and permanently deletes your account and
-          all of your streaks. Copies may remain in our database provider&apos;s backups for a
+          all of your streaks, and disconnects Sign in with Apple if you used it. Copies may remain in our database provider&apos;s backups for a
           limited time before they&apos;re overwritten.
         </p>
         <p>
@@ -157,7 +175,7 @@ export default function StreakStatsPrivacyPolicy() {
       eyebrow="Streak Stats · Legal"
       title="Privacy Policy"
       standfirst="What the Streak Stats app collects, why, and how to delete it."
-      effectiveDate="September 25, 2026"
+      effectiveDate="October 1, 2026"
       links={[
         { href: '/streak-stats', label: 'Support' },
         { href: '/streak-stats/terms', label: 'Terms of Service' },
