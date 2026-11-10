@@ -46,6 +46,7 @@ export default function SkillsSection() {
 
       <SingleSkill title="Azure Cloud">
         <ul className="resume-skill-list">
+          <li>Foundry</li>
           <li>Functions</li>
           <li>App Services</li>
           <li>VMs</li>

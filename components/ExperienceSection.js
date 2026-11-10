@@ -7,7 +7,7 @@ export default function ExperienceSection() {
         company="Barrett Jackson"
         location="Scottsdale, AZ"
         title="Senior .NET Developer"
-        dates="JULY 2024 - PRESENT"
+        dates="JULY 2024 - OCTOBER 2026"
         skills={['C#', 'SQL', 'Front End', 'Azure', 'CI/CD', 'TDD']}
         url="https://www.autohunter.com"
       >
@@ -15,10 +15,10 @@ export default function ExperienceSection() {
           Lead developer of AutoHunter.com which hosts live auctions of vehicles listed by individuals and imported by dealers.
         </p>
         <ul>
+          <li>Created an AI content writing proof of concept using Azure Foundry and associated SDKs and APIs.</li>
           <li>Used Azure queues and functions to add new features and migrate existing processes.</li>
           <li>Used experience in C# to navigate large .NET Framework MVC legacy code and develop new .net 8 code. Introduced DI and unit testing.</li>
           <li>Implemented a back plane with Azure Service Bus to scale out an application that used SignalR.</li>
-          <li>Led all aspects of development and trained another team member in C# coding.</li>
         </ul>
       </SingleExperience>
 
