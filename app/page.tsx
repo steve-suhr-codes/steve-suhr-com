@@ -93,6 +93,44 @@ export default function Home() {
 
             <section id="projects" className="resume-section">
               <h2>Projects</h2>
+              <a
+                href="https://github.com/steve-suhr-codes/streak-stats-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resume-job resume-job--link"
+              >
+                <div className="resume-job-title-row">
+                  <h3 className="resume-job-company">
+                    Streak Stats
+                    <FiArrowRight className="resume-job-arrow" aria-hidden="true" />
+                  </h3>
+                  <span className="resume-job-location">Source on GitHub</span>
+                </div>
+                <div className="resume-job-role-row">
+                  <p className="resume-job-role">Mobile app for iOS and Android (never launched)</p>
+                  <span className="resume-job-dates">Sep 2026 – Nov 2026</span>
+                </div>
+                <div className="resume-job-body">
+                  <p>
+                    A streak tracker with daily and manual streaks, history, and milestone
+                    notifications. The Expo app talks to a Fastify and Postgres API, with Google and
+                    Apple sign-in. I took it as far as TestFlight and Google Play internal testing,
+                    but never launched it publicly.
+                  </p>
+                  <p>
+                    Free accounts get two streaks, and a one-time purchase unlocks more. I wired that
+                    up with RevenueCat: the app sells it, and the API enforces the limit and confirms
+                    purchases with RevenueCat before unlocking. Tested end to end on iOS with
+                    Apple&apos;s sandbox.
+                  </p>
+                </div>
+                <ul className="resume-job-pills">
+                  {['React Native', 'Expo', 'TypeScript', 'Fastify', 'Prisma', 'Postgres', 'RevenueCat', 'Sentry', 'Vercel'].map((skill) => (
+                    <li key={skill} className="resume-job-pill">{skill}</li>
+                  ))}
+                </ul>
+              </a>
+
               <Link href="/projects/this-site" className="resume-job resume-job--link">
                 <div className="resume-job-title-row">
                   <h3 className="resume-job-company">
